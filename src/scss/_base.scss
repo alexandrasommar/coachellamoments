@@ -1,0 +1,31 @@
+/**********************
+         Base
+**********************/
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+/**********************
+         Banner
+**********************/
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url('../img/palmtrees.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    h1 {
+        color: #fff;
+        font-family: 'Permanent Marker', cursive; 
+        font-size: 6em;
+        border: 2px solid #fff;
+        padding: 40px;
+    }
+}
