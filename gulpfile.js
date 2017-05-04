@@ -1,19 +1,38 @@
 var gulp = require('gulp');
 
 // Plugins
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var bs = require('browser-sync').create();
+var sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    bs = require('browser-sync').create(),
+    babel = require('gulp-babel'),
+    babelify = require('babelify'),
+    browserify = require('browserify');
 
 // Tasks
 gulp.task('scripts', function() {
   return gulp.src('src/js/**/*.js')
+    .pipe(babel({
+          presets: ['es2015']
+    }))
     .pipe(concat('all.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./js'));
 });
+
+//Convert ES6 ode in all js files in src/js folder and copy to 
+//build folder as bundle.js
+gulp.task("build", function(){
+    return browserify({
+      entries: ["./js/app.js"]
+    })
+    .transform(babelify)
+    .bundle()
+    .pipe(source("bundle.js"))
+    .pipe(gulp.dest("./build"));
+});
+
 gulp.task('sass', function() {
   return gulp.src('src/scss/**/*.scss')
     .pipe(sass({outputStyle: 'compressed'}))
@@ -28,6 +47,8 @@ gulp.task('browser-sync', ['sass'], function() {
     }
   })
 });
+//Default task. This will be run when no task is passed in arguments to gulp
+gulp.task("default", ["build"]);
 
 // Watch
 gulp.task('watch', ['browser-sync'], function() {
