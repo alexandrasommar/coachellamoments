@@ -1,42 +1,28 @@
 <?php
 //Filter on tag #coachellafestival
-$url = 'https://www.instagram.com/explore/tags/coachellafestival/?__a=1';
+$baseurl = 'https://www.instagram.com/explore/tags/coachellafestival/?__a=1';
+$url = $baseurl;
 
 //Get data from Instagram
-$data = file_get_contents($url);
-?>
+$data = json_decode(file_get_contents($url));
 
-<script>
-    //Transform to JS object
-    var dataObj = <?php echo $data; ?>;
-</script>
-<?php
+//Get most recent posts
+for ($i = 0; $i < 10; $i++) {
+    $mostRecent = $data->tag->media->nodes[$i];
+}
 
 // Saves the data in json file
-file_put_contents("src/json/toplist.json", json_encode($data));
+file_put_contents("src/json/mostrecent.json", json_encode($mostRecent));
 
-
-
-/*
+//Get top posts
 for ($i = 0; $i < 10; $i++) {
-
-    //Each post
-    $postdata = $data->tag->media->nodes[$i];
-    $date = $postdata->date;
-    $publishdate = date('m/d/Y', $date);
-
-    
-    echo '<img src="'.$postdata->thumbnail_src.'">';
-    echo '<p>Owner: '.$postdata->owner->id.'</p>';
-    echo '<p>Caption: '.$postdata->caption.'</p>';
-    echo '<p>Likes: '.$postdata->likes->count.'</p>';
-    echo '<p>Published: '.$publishdate.'</p>';
-    
-
+    $topPosts = $data->tag->top_posts->nodes[$i];
 }
-*/
 
+// Saves the data in json file
+file_put_contents("src/json/top.json", json_encode($topPosts));
 
+?>
 
 
 
