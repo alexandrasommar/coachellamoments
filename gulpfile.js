@@ -6,6 +6,7 @@ var sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     bs = require('browser-sync').create(),
+    connect = require('gulp-connect-php'),
     babel = require('gulp-babel'),
     babelify = require('babelify'),
     browserify = require('browserify');
@@ -25,12 +26,20 @@ gulp.task('scripts', function() {
 //build folder as bundle.js
 gulp.task("build", function(){
     return browserify({
-      entries: ["./js/app.js"]
+      entries: ["./js/all.js"]
     })
     .transform(babelify)
     .bundle()
     .pipe(source("bundle.js"))
     .pipe(gulp.dest("./build"));
+});
+gulp.task('connect-sync', function() {
+    connect.server({}, function (){
+        browserSync({
+          proxy: '127.0.0.1:3000',
+          files: ['**/*.php']
+        });
+    });
 });
 
 gulp.task('sass', function() {
@@ -40,7 +49,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('css'))
     .pipe(bs.reload({ stream: true }))
 });
-gulp.task('browser-sync', ['sass'], function() {
+gulp.task('browser-sync', ['sass'], function() {   
   bs.init({
     server: {
       baseDir: "./"
@@ -48,11 +57,15 @@ gulp.task('browser-sync', ['sass'], function() {
   })
 });
 //Default task. This will be run when no task is passed in arguments to gulp
-gulp.task("default", ["build"]);
+gulp.task('default', ['build']);
 
 // Watch
 gulp.task('watch', ['browser-sync'], function() {
-  gulp.watch('src/scss/**/*.scss', ['sass']);
-  gulp.watch('src/js/**/*.js', ['scripts']);
-  gulp.watch("*.html").on("change", bs.reload);
+gulp.watch('src/scss/**/*.scss', ['sass']);
+gulp.watch('src/js/**/*.js', ['scripts']);
+gulp.watch('*.html').on('change', bs.reload);
+gulp.watch('src/php/**/*.php').on('change', function () {
+    browserSync.reload();
+});
+
 });
