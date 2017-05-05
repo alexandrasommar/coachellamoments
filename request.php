@@ -10,9 +10,13 @@ $data = file_get_contents($url);
     //Transform to JS object
     var dataObj = <?php echo $data; ?>;
 </script>
+<?php
+
+// Saves the data in json file
+file_put_contents("src/json/toplist.json", json_encode($data));
 
 
-<?
+
 /*
 for ($i = 0; $i < 10; $i++) {
 
