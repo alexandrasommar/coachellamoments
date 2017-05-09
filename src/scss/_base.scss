@@ -42,7 +42,8 @@ section {
         color: #563936;
         content: '\25C9';
     }
-    .nav-item:hover p:after {
+    .nav-item:hover p:after,
+    .nav-item.active p:after {
         font-size: 0.6em;
         color: #563936;
         content: '\25C9';
