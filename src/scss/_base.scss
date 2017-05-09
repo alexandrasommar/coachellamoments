@@ -45,14 +45,20 @@ section {
     .nav-item:hover p:after,
     .nav-item.active p:after {
         font-size: 0.6em;
-        color: #563936;
         content: '\25C9';
+        color: #563936;
     }
     .nav-item span {
         visibility: hidden;
-        &:hover {
-            visibility: visible;
-        }
+        opacity: 0;
+        transition: 0.3s;
+        margin-right: 10px;
+        font-size: 0.55em;
+        text-transform: uppercase;
+    }
+    .nav-item:hover span {
+        visibility: visible;
+        opacity: 1;
     }
 }
 

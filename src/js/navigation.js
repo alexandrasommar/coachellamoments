@@ -29,6 +29,8 @@ $('a[href*="#"]')
         }
         $(this).siblings().removeClass('active');
         $(this).toggleClass('active');
+
+        //TODO: Fixa så att 'active' tas bort för alla sections vid klick på "to top"
     
         // Does a scroll target exist?
         if (target.length) {
@@ -44,4 +46,7 @@ $('a[href*="#"]')
             });
         }
     }
+// $('a.to-top').click(function(){
+
+// });
 });
