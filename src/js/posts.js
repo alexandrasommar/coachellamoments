@@ -36,5 +36,12 @@
 	fetchRequest();
 	fetchResults(jsonTopList, topList);
 	fetchResults(jsonMostRecent, mostRecent);
+	
+	setTimeout(function() {
+		fetchRequest();
+		fetchResults(jsonTopList, topList);
+		fetchResults(jsonMostRecent, mostRecent);
+	},(1000 * 60 * 5) );
+
 
 })();
