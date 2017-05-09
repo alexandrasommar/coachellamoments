@@ -6,6 +6,54 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
 }
+section {
+    min-width: 100vw;
+    min-height: 100vh;
+    border: 1px solid #222;
+}
+
+/**********************
+    Scroll indicator
+**********************/
+
+.main-nav {
+    position: fixed;
+    z-index: 1;
+    margin: 0;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    .nav-item p:after {
+        content: '\25CB';
+    }
+    .nav-item {
+        color: #ddd;
+        text-decoration: none;
+        font-size: 1.8em;
+        transition: color 0.3s;
+        padding: 0.2em;
+        display: block;
+    }
+    .nav-item p {
+        text-align: right;
+    }
+    .nav-item.current {
+        font-size: 0.6em;
+        color: #563936;
+        content: '\25C9';
+    }
+    .nav-item:hover p:after {
+        font-size: 0.6em;
+        color: #563936;
+        content: '\25C9';
+    }
+    .nav-item span {
+        visibility: hidden;
+        &:hover {
+            visibility: visible;
+        }
+    }
+}
 
 /**********************
          Banner
@@ -15,8 +63,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 100vw;
-    min-height: 100vh;
     background-image: url('../img/palmtrees.gif');
     background-position: center;
     background-size: cover;
@@ -29,4 +75,12 @@ body {
         border: 2px solid #fff;
         padding: 80px;
     }
+}
+
+/**********************
+         Footer
+**********************/
+
+footer {
+    min-height: 500px;
 }
