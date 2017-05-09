@@ -14,12 +14,11 @@ $('a[href*="#"]')
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         target.addClass('current');
-        var targetName = target[0].id);
+        var targetName = target[0].id;
         if (window.history.replaceState) {
            //prevents browser from storing history with each change:
            window.history.replaceState(targetName, targetName, '/' + targetName);
         }
-        
         
         // Does a scroll target exist?
         if (target.length) {
