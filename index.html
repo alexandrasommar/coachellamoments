@@ -7,37 +7,47 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    <!-- TODO: Rensa klasser/IDn som inte används (invänta fix för scroll indicator) -->
+
     <nav class="main-nav">
-        <a href="#home" class="nav-item"><p><span>Home</span></p></a>
-        <a href="#info" class="nav-item"><p><span>Info</span></p></a>
-        <a href="#top-list" class="nav-item"><p><span>Top List</span></p></a>
-        <a href="#coachella" class="nav-item"><p><span>Coachella</span></p></a>
-        <a href="#most-recent" class="nav-item"><p><span>Most Recent</span></p></a>
+        <a href="#home" id="home-btn" class="nav-item active"><p><span>Home</span></p></a>
+        <a href="#info" id="info-btn" class="nav-item"><p><span>Info</span></p></a>
+        <a href="#top-list" id="top-list-btn" class="nav-item"><p><span>Top List</span></p></a>
+        <a href="#coachella" id="coachella-btn" class="nav-item"><p><span>Coachella</span></p></a>
+        <a href="#most-recent" id="most-recent-btn" class="nav-item"><p><span>Most Recent</span></p></a>
         <div class="scroll-progress-indicator"></div>
     </nav>
 
-    <section id="home" class="banner">
+    <section id="home" class="banner active new-page">
         <div class="heading">
             <h1>#hashtag</h1>
         </div> <!-- .heading -->
     </section> <!-- .banner -->
 
-    <section id="info" class="info">
+    <section id="info" class="info new-page">
         <h2>Info</h2>
     </section>
 
-    <section id="top-list" class="top-list">
+    <section id="top-list" class="top-list new-page">
         <h2>Most popular</h2>
         <div class="posts">
             <!-- Posts-->
         </div> <!-- .posts -->
     </section> <!-- .top-list -->
 
-    <section id="coachella" class="coachella">
+    <section id="coachella" class="coachella new-page">
         <h2>Coachella</h2>
+        <div class="color-block">
+            <div>
+                
+            </div>
+            <div>
+                
+            </div>
+        </div>
     </section>
 
-    <section id="most-recent" class="most-recent">
+    <section id="most-recent" class="most-recent new-page">
         <h2>Latests posts</h2>
         <div class="posts">
             <!-- Posts-->

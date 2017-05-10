@@ -1,4 +1,10 @@
 /**********************
+        Assets
+**********************/
+
+@import "assets/_colors";
+
+/**********************
          Base
 **********************/
 
@@ -9,7 +15,6 @@ body {
 section {
     min-width: 100vw;
     min-height: 100vh;
-    border: 1px solid #222;
 }
 
 /**********************
@@ -27,7 +32,7 @@ section {
         content: '\25CB';
     }
     .nav-item {
-        color: #ddd;
+        color: $lightpeach;
         text-decoration: none;
         font-size: 1.8em;
         transition: color 0.3s;
@@ -37,16 +42,12 @@ section {
     .nav-item p {
         text-align: right;
     }
-    .nav-item.current {
-        font-size: 0.6em;
-        color: #563936;
-        content: '\25C9';
-    }
     .nav-item:hover p:after,
     .nav-item.active p:after {
         font-size: 0.6em;
         content: '\25C9';
-        color: #563936;
+        //color: #563936;
+        color: $peach;
     }
     .nav-item span {
         visibility: hidden;
@@ -85,9 +86,29 @@ section {
 }
 
 /**********************
+   Section: Coachella
+**********************/
+
+section.coachella {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .color-block {
+        //background-color: $nude;
+        background-image: url('../img/palmtrees_bg.png');
+        background-size: cover;
+        
+        background-repeat: no-repeat;
+        min-height: 50vh;
+        width: 100%;
+    }
+}
+
+/**********************
          Footer
 **********************/
 
 footer {
+    background: $nude;
     min-height: 500px;
 }
