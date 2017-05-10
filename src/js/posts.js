@@ -29,7 +29,7 @@ function fetchRequest() {
 
         for(var i = 0; i < 5; i++) {
             element.innerHTML += `<a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}"></a>`;
-            element.innerHTML += `<br><a href="https://api.instagram.com/v1/media/${result[i].code}/likes"><button>like</button></a><br>`;
+            element.innerHTML += `<br><a href="/src/php/auth.php?like=true"><button>like</button></a><br>`;
             element.innerHTML += `<p>Likes: ${result[i].likes.count}</p>`;
         }
     }
