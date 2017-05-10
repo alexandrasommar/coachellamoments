@@ -1,0 +1,24 @@
+/**********************
+   Section: Coachella
+**********************/
+
+section.coachella {
+    flex-direction: row;
+    .img-block {
+        width: 50%;
+        img {
+            width: 70%;
+            border: 50px solid $nude;
+        }
+    }
+    .text-block {
+        width: 50%;
+        padding: 0;
+        p {
+            padding: 0 150px 0 0;
+        }
+        button {
+            width: auto;
+        }
+    }
+}
