@@ -21,6 +21,9 @@ h2 {
     letter-spacing: 1.5px;
     font-size: 2em;
 }
+p {
+    line-height: 1.5em;
+}
 
 /**********************
     Scroll indicator
@@ -91,6 +94,42 @@ h2 {
 }
 
 /**********************
+     Section: Info
+**********************/
+
+section.info {
+    display: flex;
+    align-items: center;
+    img {
+        position: absolute;
+        height: 80vh;
+        left: 100px;
+        z-index: 1;
+    }
+    .color-block {
+        display: flex;
+        justify-content: flex-end;
+        background-image: url(../img/coachella.jpg);
+        background-size: cover;
+        background-position: 50% 40%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 50vh;
+        z-index: 0;
+        .text-block {
+            background-color: $lightpeach;
+            opacity: 0.97;
+            color: $purple;
+            box-sizing: border-box;
+            margin: 30px 100px 30px 0;
+            padding: 20px 60px;
+            width: 50%;
+            height: auto;
+        }
+    }
+}
+
+/**********************
    Section: Coachella
 **********************/
 
@@ -117,7 +156,6 @@ section.coachella {
         padding: 20px;
         p {
             padding: 0;
-            line-height: 1.5em;
         }
         button {
             border: 0;

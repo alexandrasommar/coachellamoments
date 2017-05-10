@@ -24,7 +24,13 @@
     </section> <!-- .banner -->
 
     <section id="info" class="info new-page">
-        <h2>Info</h2>
+        <img src="img/people.png" alt="Coachella visistors">
+        <div class="color-block">
+            <div class="text-block">
+                <h2>What's your best Coachella moment?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam tu hanc copiosiorem etiam soles dicere. Atqui reperies, inquit, in hoc quidem pertinacem; Et ille ridens: Video, inquit, quid agas; Summum ením bonum exposuit vacuitatem doloris; Duo Reges: constructio interrete.</p>
+            </div>
+        </div>
     </section>
 
     <section id="top-list" class="top-list new-page">
