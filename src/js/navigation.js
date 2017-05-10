@@ -1,3 +1,5 @@
+// SCROLL INDICATOR - ON CLICK
+
 // Select all links with hashes
 $('a[href*="#"]')
 // Remove empty links
@@ -49,41 +51,43 @@ $('a[href*="#"]')
     }
 });
 
-//Highlight active section on scroll
-// var home = $('#home').scrollTop();
-// var info = $(window).scrollTop();
-// var topList = $('#top-list').scrollTop();
-// var coachella = $('#coachella').scrollTop();
-// var mostRecent = $('#most-recent').scrollTop();
+
+// SCROLL INDICATOR - ON SCROLL
+
+//TEST 1
 
 // $(window).scroll(function() {
 
-//     if(info >= 1000) {
-//         $('#info').addClass('active');
-//     }
+//     var scroll = $(window).scrollTop();
+//     //var currentSection = $('section.active').height();
+//     var windowHeight = $(window).height();
+//     var breakpoint = windowHeight * 0.7;
+//     var marker = $('a.nav-item');
+
+//     if (scroll < breakpoint) {
+        
+//         marker.removeClass('active');
+//         $('#home-btn').addClass('active');
+
+//         if (window.history.replaceState) {
+//            window.history.replaceState('home', 'Home', '/home');
+//         }
+
+//     } else if (scroll >= breakpoint) {
+
+//         marker.removeClass('active');
+//         $('#info-btn').addClass('active');
+
+//         if (window.history.replaceState) {
+//            window.history.replaceState('info', 'Info', '/info');
+//         }
+
+//     } //forstättning för övriga sections
 
 // });
 
-//$(window).scroll(function() {
 
-    // var scroll = $(window).scrollTop();
-    //var windowHeight = $(window).height();
-
-    // if (scrollPosition >= windowHeight) {
-    //     $('a[href*="#"]').removeClass('active');
-    //     $('section[class*="active"]').removeClass('active');
-    //     $('#info-btn').addClass('active');
-    //     $('#info').addClass('active');
-    // } else {
-    //     $('#info-btn').removeClass('active');
-    //     $('#info').removeClass('active');
-    // }
-
-//});
-
-// var scrollPosition = $('section.active').offset({top:0, left:0});
-
-//TEST
+//TEST 2
 
 // var scrollPosition = $('section.active').offset().top;
 // var screenHeight = $(window).height();
@@ -113,6 +117,63 @@ $('a[href*="#"]')
 
 // });
 
+//TEST 3
+
+// $(window).on('load resize scroll', function() {
+//     addClassToElementInViewport($('#home'), 'active');
+//     addClassToElementInViewport($('#info'), 'active');
+//     addClassToElementInViewport($('#top-list'), 'active');
+//     addClassToElementInViewport($('#coachella'), 'active');
+//     addClassToElementInViewport($('#most-recent'), 'active');
+// });
+
+// function addClassToElementInViewport(element, newClass) {
+    
+//     var marker = $('a.nav-item');
+
+//     if (inViewport(element)) {
+        
+//         element.addClass(newClass);
+//         console.log('ELEMENT');
+//         console.log(element);
+        
+//         if (element === '#home') {
+//             marker.removeClass('active');
+//             $('#home-btn').addClass('active');
+//         } else if (element === '#info') {
+//             marker.removeClass('active');
+//             $('#info-btn').addClass('active');
+//         } else if (element === '#top-list') {
+//             marker.removeClass('active');
+//             $('#top-list-btn').addClass('active');
+//         } else if (element === '#coachella') {
+//             marker.removeClass('active');
+//             $('#coachella-btn').addClass('active');
+//         } else if (element === '#most-recent') {
+//             marker.removeClass('active');
+//             $('#most-recent-btn').addClass('active');
+//         }
+
+//     }
+
+// }
+
+// function inViewport(element) {
+    
+//     if (typeof jQuery === "function" && element instanceof jQuery) {
+//         element = element[0];
+//     }
+    
+//     var elementBounds = element.getBoundingClientRect();
+    
+//     return (
+//         elementBounds.top >= 0 &&
+//         elementBounds.left >= 0 &&
+//         elementBounds.bottom <= $(window).height() &&
+//         elementBounds.right <= $(window).width()
+//     );
+
+// }
 
 
 
