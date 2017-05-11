@@ -7,8 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <!-- TODO: Rensa klasser/IDn som inte används (invänta fix för scroll indicator) -->
-
     <nav class="main-nav">
         <a href="#home" class="nav-item home"><p><span>Home</span></p></a>
         <a href="#info" class="nav-item info"><p><span>Info</span></p></a>
@@ -17,14 +15,14 @@
         <a href="#most-recent" class="nav-item most-recent"><p><span>Most Recent</span></p></a>
     </nav>
 
-    <section id="home" class="home new-page">
+    <section id="home" class="home">
         <div class="heading">
             <h1>#hashtag</h1>
         </div> <!-- .heading -->
     </section> <!-- .banner -->
 
-    <section id="info" class="info new-page">
-        <img src="img/people.png" alt="Coachella visistors">
+    <section id="info" class="info">
+        <img src="img/people.png" alt="Coachella visistors" class="info-img">
         <div class="color-block">
             <div class="text-block">
                 <h2>What's your best Coachella moment?</h2>
@@ -33,25 +31,25 @@
         </div>
     </section>
 
-    <section id="top-list" class="top-list new-page">
+    <section id="top-list" class="top-list">
         <h2>Most popular</h2>
         <div class="posts">
             <!-- Posts-->
         </div> <!-- .posts -->
     </section> <!-- .top-list -->
 
-    <section id="coachella" class="coachella new-page">
+    <section id="coachella" class="coachella">
         <div class="img-block">
             <img src="../img/coachella2.jpg">
         </div>
-        <div class="text-block">
+        <div class="text-block animated-text">
             <h2>Coachella festival</h2>
             <p>Ready to make your Coachella experience exceptional? Everything you want to know before you hit the desert can be found in our Coachella Guides. From Passes and Travel to Camping and Cuisine, we’ve got you covered.</p>
             <button id="visit-coachella">Visit Coachella official</button>
         </div>
     </section>
 
-    <section id="most-recent" class="most-recent new-page">
+    <section id="most-recent" class="most-recent">
         <h2>Latests posts</h2>
         <div class="posts">
             <!-- Posts-->

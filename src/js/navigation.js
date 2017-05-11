@@ -56,21 +56,17 @@ $('a[href*="#"]')
 
 var currentPage;
 
+//Get user position
 function getUserPosition() {
     return $(window).scrollTop();
 }
 
-function getElementPos(element) {
-    console.log('GET ELEMENT POSITION');
-    console.log(element);
-    var offset = element.offset();
-    return offset.top;
-}
-
+//On scroll
 $(window).on('scroll', function() {
 
     var scrollTop = getUserPosition();
 
+    var homeMarker = $('a.nav-item.home');
     var infoTop = $('#info').offset().top;
     var infoMarker = $('a.nav-item.info');
     var topListTop = $('#top-list').offset().top;
@@ -80,75 +76,49 @@ $(window).on('scroll', function() {
     var mostRecentTop = $('#most-recent').offset().top;
     var mostRecentMarker = $('a.nav-item.most-recent');
 
-    if (scrollTop < (infoTop - 200)) {
-
-        $('a.nav-item').removeClass('active');
-        $('a.nav-item.home').addClass('active');
-
-        currentElement('home');
-
-    } 
-
-    if (scrollTop > (infoTop - 200)) {
-
-        $('a.nav-item').removeClass('active');
-        infoMarker.addClass('active');
-
-        currentElement('info');
-
-    } 
-
-    if (scrollTop > (topListTop - 200)) {
-
-        $('a.nav-item').removeClass('active');
-        topListMarker.addClass('active');
-
-        currentElement('top-list');
-
-    } 
-
-    if (scrollTop > (coachellaTop - 200)) {
-
-        $('a.nav-item').removeClass('active');
-        coachellaMarker.addClass('active');
-
-        currentElement('coachella');
-
-    } 
-
     if (scrollTop > (mostRecentTop - 200)) {
 
-        $('a.nav-item').removeClass('active');
-        mostRecentMarker.addClass('active');
+        currentElement('most-recent', mostRecentMarker);
 
-        currentElement('most-recent');
+    } else if (scrollTop > (coachellaTop - 200)) {
 
-    }
+        currentElement('coachella', coachellaMarker);
 
+    } else if (scrollTop > (topListTop - 200)) {
+
+        currentElement('top-list', topListMarker);
+
+    } else if (scrollTop > (infoTop - 200)) {
+
+        currentElement('info', infoMarker);
+
+    } else if (scrollTop < (infoTop - 200)) {
+
+        currentElement('home', homeMarker);
+    } 
 });
 
-function currentElement(element) {
+//Highlight marker for current element
+function currentElement($el, $marker) {
+    $('a.nav-item').removeClass('active');
+    $marker.addClass('active');
+    currentUrl($el);
+}
+
+
+//Change url to current element
+function currentUrl(element) {
 
     if (element === currentPage) {
         return false;
     }
 
-    console.log("variabeln ändrades " + element);
-
     currentPage = element;
 
-    console.log(currentPage);
-
     if (window.history.replaceState) {
-        console.log("Set url to " + element);
        window.history.replaceState(element, element, '/' + element);
     }
 
-} 
-
-
-
-
-
+}
 
 

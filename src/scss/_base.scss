@@ -105,6 +105,9 @@ section.info {
         height: 80vh;
         left: 100px;
         z-index: 1;
+        margin-top: 300px;
+        opacity: 0;
+        transition: 0.5s;
     }
     .color-block {
         display: flex;
@@ -154,6 +157,8 @@ section.coachella {
         width: 90%;
         box-sizing: border-box;
         padding: 20px;
+        margin-left: 100px;
+        transition: 0.5s;
         p {
             padding: 0;
         }
