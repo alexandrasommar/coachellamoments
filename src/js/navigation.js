@@ -54,126 +54,99 @@ $('a[href*="#"]')
 
 // SCROLL INDICATOR - ON SCROLL
 
-//TEST 1
+var currentPage;
 
-// $(window).scroll(function() {
+function getUserPosition() {
+    return $(window).scrollTop();
+}
 
-//     var scroll = $(window).scrollTop();
-//     //var currentSection = $('section.active').height();
-//     var windowHeight = $(window).height();
-//     var breakpoint = windowHeight * 0.7;
-//     var marker = $('a.nav-item');
+function getElementPos(element) {
+    console.log('GET ELEMENT POSITION');
+    console.log(element);
+    var offset = element.offset();
+    return offset.top;
+}
 
-//     if (scroll < breakpoint) {
-        
-//         marker.removeClass('active');
-//         $('#home-btn').addClass('active');
+$(window).on('scroll', function() {
 
-//         if (window.history.replaceState) {
-//            window.history.replaceState('home', 'Home', '/home');
-//         }
+    var scrollTop = getUserPosition();
 
-//     } else if (scroll >= breakpoint) {
+    var infoTop = $('#info').offset().top;
+    var infoMarker = $('a.nav-item.info');
+    var topListTop = $('#top-list').offset().top;
+    var topListMarker = $('a.nav-item.top-list');
+    var coachellaTop = $('#coachella').offset().top;
+    var coachellaMarker = $('a.nav-item.coachella');
+    var mostRecentTop = $('#most-recent').offset().top;
+    var mostRecentMarker = $('a.nav-item.most-recent');
 
-//         marker.removeClass('active');
-//         $('#info-btn').addClass('active');
+    if (scrollTop < (infoTop - 200)) {
 
-//         if (window.history.replaceState) {
-//            window.history.replaceState('info', 'Info', '/info');
-//         }
+        $('a.nav-item').removeClass('active');
+        $('a.nav-item.home').addClass('active');
 
-//     } //forstättning för övriga sections
+        currentElement('home');
 
-// });
+    } 
+
+    if (scrollTop > (infoTop - 200)) {
+
+        $('a.nav-item').removeClass('active');
+        infoMarker.addClass('active');
+
+        currentElement('info');
+
+    } 
+
+    if (scrollTop > (topListTop - 200)) {
+
+        $('a.nav-item').removeClass('active');
+        topListMarker.addClass('active');
+
+        currentElement('top-list');
+
+    } 
+
+    if (scrollTop > (coachellaTop - 200)) {
+
+        $('a.nav-item').removeClass('active');
+        coachellaMarker.addClass('active');
+
+        currentElement('coachella');
+
+    } 
+
+    if (scrollTop > (mostRecentTop - 200)) {
+
+        $('a.nav-item').removeClass('active');
+        mostRecentMarker.addClass('active');
+
+        currentElement('most-recent');
+
+    }
+
+});
+
+function currentElement(element) {
+
+    if (element === currentPage) {
+        return false;
+    }
+
+    console.log("variabeln ändrades " + element);
+
+    currentPage = element;
+
+    console.log(currentPage);
+
+    if (window.history.replaceState) {
+        console.log("Set url to " + element);
+       window.history.replaceState(element, element, '/' + element);
+    }
+
+} 
 
 
-//TEST 2
-
-// var scrollPosition = $('section.active').offset().top;
-// var screenHeight = $(window).height();
-// var activationOffset = 0;
-// var maxScrollHeight = $('body').height() + screenHeight;
-// //var scrollActivationPoint = scrollPosition - (screenHeight * activationOffset);
-// var scrollActivationPoint = screenHeight * 0.7;
-
-// $(window).scroll(function() {
-    
-//     var scrollPosY = window.pageYOffset;
-//     var elementInView = scrollPosY > scrollActivationPoint;
-//     var bottomOfPage = maxScrollHeight <= scrollPosY && !elementInView;
-
-//     if(elementInView || bottomOfPage) {
-            
-//         $('section.active').next('section').addClass('active');
-
-//         // elementInView.next('.new-page').addClass('active');
-//         // elementInView.prev('new-page.active').removeClass('active');
-
-//         $('a.active').next('a').addClass('active');
-
-//         //$('section').addClass('active');
-//         //$('a[href*="#"]').addClass('active');
-//     }
-
-// });
-
-//TEST 3
-
-// $(window).on('load resize scroll', function() {
-//     addClassToElementInViewport($('#home'), 'active');
-//     addClassToElementInViewport($('#info'), 'active');
-//     addClassToElementInViewport($('#top-list'), 'active');
-//     addClassToElementInViewport($('#coachella'), 'active');
-//     addClassToElementInViewport($('#most-recent'), 'active');
-// });
-
-// function addClassToElementInViewport(element, newClass) {
-    
-//     var marker = $('a.nav-item');
-
-//     if (inViewport(element)) {
-        
-//         element.addClass(newClass);
-//         console.log('ELEMENT');
-//         console.log(element);
-        
-//         if (element === '#home') {
-//             marker.removeClass('active');
-//             $('#home-btn').addClass('active');
-//         } else if (element === '#info') {
-//             marker.removeClass('active');
-//             $('#info-btn').addClass('active');
-//         } else if (element === '#top-list') {
-//             marker.removeClass('active');
-//             $('#top-list-btn').addClass('active');
-//         } else if (element === '#coachella') {
-//             marker.removeClass('active');
-//             $('#coachella-btn').addClass('active');
-//         } else if (element === '#most-recent') {
-//             marker.removeClass('active');
-//             $('#most-recent-btn').addClass('active');
-//         }
-
-//     }
-
-// }
-
-// function inViewport(element) {
-    
-//     if (typeof jQuery === "function" && element instanceof jQuery) {
-//         element = element[0];
-//     }
-    
-//     var elementBounds = element.getBoundingClientRect();
-    
-//     return (
-//         elementBounds.top >= 0 &&
-//         elementBounds.left >= 0 &&
-//         elementBounds.bottom <= $(window).height() &&
-//         elementBounds.right <= $(window).width()
-//     );
-
-// }
 
 
 

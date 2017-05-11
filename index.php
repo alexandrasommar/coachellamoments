@@ -10,14 +10,14 @@
     <!-- TODO: Rensa klasser/IDn som inte används (invänta fix för scroll indicator) -->
 
     <nav class="main-nav">
-        <a href="#home" id="home-btn" class="nav-item active"><p><span>Home</span></p></a>
-        <a href="#info" id="info-btn" class="nav-item"><p><span>Info</span></p></a>
-        <a href="#top-list" id="top-list-btn" class="nav-item"><p><span>Top List</span></p></a>
-        <a href="#coachella" id="coachella-btn" class="nav-item"><p><span>Coachella</span></p></a>
-        <a href="#most-recent" id="most-recent-btn" class="nav-item"><p><span>Most Recent</span></p></a>
+        <a href="#home" class="nav-item home"><p><span>Home</span></p></a>
+        <a href="#info" class="nav-item info"><p><span>Info</span></p></a>
+        <a href="#top-list" class="nav-item top-list"><p><span>Top List</span></p></a>
+        <a href="#coachella" class="nav-item coachella"><p><span>Coachella</span></p></a>
+        <a href="#most-recent" class="nav-item most-recent"><p><span>Most Recent</span></p></a>
     </nav>
 
-    <section id="home" class="banner active new-page">
+    <section id="home" class="home new-page">
         <div class="heading">
             <h1>#hashtag</h1>
         </div> <!-- .heading -->
