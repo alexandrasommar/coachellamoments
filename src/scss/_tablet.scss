@@ -11,9 +11,11 @@ h2 {
 **********************/
 
 section.home {
-    h1 {
-        font-size: 5.5em;
-        padding: 80px;
+    .heading {
+        h1 {
+            font-size: 3.5em;
+            padding: 80px;
+        }
     }
 }
 

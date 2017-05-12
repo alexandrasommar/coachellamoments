@@ -34,8 +34,8 @@ $('a[href*="#"]').click(function(event) {
         
         $(this).siblings().removeClass('active');
         $(this).toggleClass('active');
-    
-        // Check if scroll target exists
+
+        Check if scroll target exists
         if (target.length) {
             // Only prevent default if animation is actually gonna happen
             event.preventDefault();

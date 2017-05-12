@@ -84,14 +84,28 @@ section.home {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    h1 {
-        color: #fff;
-        font-style: italic;
-        font-weight: 300;
-        font-size: 3.5em;
-        border: 2px solid #fff;
-        padding: 40px;
-        box-sizing: border-box;
+    .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            color: #fff;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 2.5em;
+            border: 2px solid #fff;
+            padding: 40px 25px;
+            box-sizing: border-box;
+        }
+        img {
+            position: absolute;
+            bottom: 50px;
+            height: 50px;
+            transition: 0.3s;
+            &:hover {
+                bottom: 40px;
+            }
+        }
     }
 }
 
