@@ -14,7 +14,7 @@ visitBtn.addEventListener('click', function() {
 function getUserPosition() {
     return $(window).scrollTop();
 }
-
+ 
 //On scroll
 $(window).scroll(function(){
 
@@ -27,7 +27,6 @@ $(window).scroll(function(){
 
 	//Section: Info animation
 	if (scrollTop > (infoTop - 300)) {
-		console.log(scrollTop);
 		infoImg.css({'margin-top': '0', 'opacity': '1'});
 	} else if (scrollTop < (infoTop - 400)) {
 		infoImg.css({'margin-top': '300px', 'opacity': '0'});
