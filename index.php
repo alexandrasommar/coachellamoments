@@ -24,7 +24,7 @@
 
     <section id="info" class="info">
         <img src="img/people.png" alt="Coachella visistors" class="info-img">
-        <div class="color-block">
+        <div class="bg-block">
             <div class="text-block">
                 <h2>What's your best Coachella moment?</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam tu hanc copiosiorem etiam soles dicere. Atqui reperies, inquit, in hoc quidem pertinacem; Et ille ridens: Video, inquit, quid agas; Summum ením bonum exposuit vacuitatem doloris; Duo Reges: constructio interrete.</p>

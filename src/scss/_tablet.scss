@@ -1,4 +1,12 @@
 /**********************
+         Base
+**********************/
+
+h2 {
+    font-size: 1.8em;
+}
+
+/**********************
          Home
 **********************/
 
@@ -6,6 +14,27 @@ section.home {
     h1 {
         font-size: 5.5em;
         padding: 80px;
+    }
+}
+
+/**********************
+     Section: Info
+**********************/
+
+section.info {
+    img {
+        height: 50vh;
+        margin: 110px 0 0 5%;
+    }
+    .bg-block {
+        .text-block {
+            margin: 250px 10% 2% 0;
+            padding: 4% 8%;
+            width: 95%;
+            height: auto;
+            min-height: 50vh;
+            max-width: 800px;
+        }
     }
 }
 

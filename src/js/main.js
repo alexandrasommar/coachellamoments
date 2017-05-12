@@ -14,7 +14,7 @@ visitBtn.addEventListener('click', function() {
 function getUserPosition() {
     return $(window).scrollTop();
 }
- 
+
 //On scroll
 $(window).scroll(function(){
 

@@ -52,7 +52,6 @@ $('a[href*="#"]').click(function(event) {
 });
 
 //Hide main-nav
-
 function hideNav(element) {
 
     var mainNav = $('.main-nav');
@@ -62,6 +61,7 @@ function hideNav(element) {
     } else {
         mainNav.css('visibility', 'visible');
     }
+
 }
 
 
@@ -90,7 +90,8 @@ $(window).on('scroll', function() {
     var mostRecentMarker = $('a.nav-item.most-recent');
     var footerTop = $('footer').offset().top;
 
-    if(scrollTop > (footerTop - 200)) {
+    if (scrollTop > (footerTop - 500)) {
+        
         hideNav('footer');
 
     } else if (scrollTop > (mostRecentTop - 200)) {
