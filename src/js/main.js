@@ -34,9 +34,9 @@ $(window).scroll(function(){
 
 	//Section: Coachella animation
 	if (scrollTop > (coachellaTop - 150)) {
-		textBlock.css('margin-left', '0');
+		textBlock.addClass('slide-in');
 	} else if(scrollTop < (coachellaTop - 500)) {
-		textBlock.css('margin-left', '100px');
+		textBlock.removeClass('slide-in');
 	}
 });
 
