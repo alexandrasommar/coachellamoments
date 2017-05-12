@@ -63,7 +63,7 @@
 
     <footer>
         <p>Footer</p>
-        <a href="#home" class="to-top">To Top</a>
+        <a href="#home" class="to-top">&#8743;</a>
     </footer>
 
     <!-- Script -->

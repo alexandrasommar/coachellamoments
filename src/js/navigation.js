@@ -35,7 +35,7 @@ $('a[href*="#"]').click(function(event) {
         $(this).siblings().removeClass('active');
         $(this).toggleClass('active');
 
-        Check if scroll target exists
+        //Check if scroll target exists
         if (target.length) {
             // Only prevent default if animation is actually gonna happen
             event.preventDefault();
@@ -51,15 +51,28 @@ $('a[href*="#"]').click(function(event) {
     }
 });
 
-//Hide main-nav
+//TODO: fixa blink på to-top knapp
+
+//Hide navigation
 function hideNav(element) {
 
     var mainNav = $('.main-nav');
+    var toTop = $('a.to-top');
 
-    if(element === 'home'|| element === 'footer') {
+    if(element === 'home') {
+
         mainNav.css('visibility', 'hidden');
+        toTop.css('visibility', 'hidden');
+
+    } else if (element === 'footer') {
+
+        mainNav.css('visibility', 'hidden');
+        toTop.css('visibility', 'visible');
+
     } else {
+        
         mainNav.css('visibility', 'visible');
+        toTop.css('visibility', 'visible');
     }
 
 }

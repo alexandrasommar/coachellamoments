@@ -35,7 +35,7 @@ p {
     z-index: 1;
     margin: 0;
     top: 50%;
-    right: 40px;
+    right: 31px;
     transform: translateY(-50%);
     .nav-item p:after {
         content: '\25CB';
@@ -45,7 +45,6 @@ p {
         text-decoration: none;
         font-size: 1.8em;
         transition: color 0.3s;
-        padding: 0.2em;
         display: block;
     }
     .nav-item p {
@@ -102,6 +101,7 @@ section.home {
             bottom: 50px;
             height: 50px;
             transition: 0.3s;
+            opacity: 0.9;
             &:hover {
                 bottom: 40px;
             }
@@ -208,5 +208,20 @@ section.coachella {
 
 footer {
     background: $nude;
-    min-height: 500px;
+    height: 45vh;
+    a {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        padding: 12px 32px;
+        background: $peach;
+        font-size: 1.5em;
+        text-decoration: none;
+        color: #fff;
+        transition: 0.3s;
+        visibility: hidden;
+        &:hover {
+            background: $sunny;
+        }
+    }
 }
