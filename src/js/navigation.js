@@ -1,11 +1,7 @@
 // SCROLL INDICATOR - ON CLICK
 
 // Select all links with hashes
-$('a[href*="#"]')
-// Remove empty links
-.not('[href="#"]')
-.not('[href="#0"]')
-.click(function(event) {
+$('a[href*="#"]').click(function(event) {
     if (
         location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
         && 
@@ -23,8 +19,12 @@ $('a[href*="#"]')
            window.history.replaceState(targetName, targetName, '/' + targetName);
         }
 
+        //Hide main-nav in section: home
+        hideNav(targetName);
+
         // Highlight active section
         var mId = $(this).attr('class').substring(-1,7);
+
         
         $("a").removeClass('active');
         
@@ -51,6 +51,19 @@ $('a[href*="#"]')
     }
 });
 
+//Hide main-nav
+
+function hideNav(element) {
+
+    var mainNav = $('.main-nav');
+
+    if(element === 'home'|| element === 'footer') {
+        mainNav.css('visibility', 'hidden');
+    } else {
+        mainNav.css('visibility', 'visible');
+    }
+}
+
 
 // SCROLL INDICATOR - ON SCROLL
 
@@ -75,26 +88,35 @@ $(window).on('scroll', function() {
     var coachellaMarker = $('a.nav-item.coachella');
     var mostRecentTop = $('#most-recent').offset().top;
     var mostRecentMarker = $('a.nav-item.most-recent');
+    var footerTop = $('footer').offset().top;
 
-    if (scrollTop > (mostRecentTop - 200)) {
+    if(scrollTop > (footerTop - 200)) {
+        hideNav('footer');
+
+    } else if (scrollTop > (mostRecentTop - 200)) {
 
         currentElement('most-recent', mostRecentMarker);
+        hideNav('most-recent');
 
     } else if (scrollTop > (coachellaTop - 200)) {
 
         currentElement('coachella', coachellaMarker);
+        hideNav('coachella');
 
     } else if (scrollTop > (topListTop - 200)) {
 
         currentElement('top-list', topListMarker);
+        hideNav('top-list');
 
     } else if (scrollTop > (infoTop - 200)) {
 
         currentElement('info', infoMarker);
+        hideNav('info');
 
     } else if (scrollTop < (infoTop - 200)) {
 
         currentElement('home', homeMarker);
+        hideNav('home');
     } 
 });
 

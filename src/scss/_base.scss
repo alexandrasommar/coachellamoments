@@ -72,7 +72,7 @@ p {
 }
 
 /**********************
-         Banner
+         Home
 **********************/
 
 section.home {
@@ -87,9 +87,10 @@ section.home {
         color: #fff;
         font-style: italic;
         font-weight: 300;
-        font-size: 5.5em;
+        font-size: 3.5em;
         border: 2px solid #fff;
-        padding: 80px;
+        padding: 40px;
+        box-sizing: border-box;
     }
 }
 
