@@ -186,3 +186,12 @@ function setMenu() {
 }
 
 $(window).on('load resize scroll', setMenu);
+
+//Close menu when a section is selected
+$('.main-nav.mobile a').on('click', function() {
+
+    console.log('KLICKAT PÅ A');
+    $('#menu').prop('checked', false);
+
+});
+

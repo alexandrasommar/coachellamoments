@@ -39,7 +39,7 @@ p {
         width: 100%;
         color: #fff;
         height: 100%;
-        position: absolute;
+        position: fixed;
         left: 0;
         overflow: hidden;
         top: -800px;
@@ -60,7 +60,7 @@ p {
         }
     }
     input[type=checkbox] {
-        position: absolute;
+        position: fixed;
         opacity: 0;
         top: 25px;
         right: 25px; 

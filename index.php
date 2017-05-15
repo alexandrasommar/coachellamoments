@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav class="main-nav desktop mobile">
-        <input id="menu" type="checkbox"/>
+        <input id="menu" type="checkbox" />
         <label for="menu" class="menu">
             <span>Menu</span>
         </label>
