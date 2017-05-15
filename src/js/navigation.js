@@ -1,4 +1,5 @@
-// SCROLL INDICATOR - ON CLICK
+//DESKTOP NAVIGATION
+// Scroll indicator - On click
 
 // Select all links with hashes
 $('a[href*="#"]').click(function(event) {
@@ -56,7 +57,8 @@ $('a[href*="#"]').click(function(event) {
 //Hide navigation
 function hideNav(element) {
 
-    var mainNav = $('.main-nav');
+    var mainNav = $('.main-nav.desktop');
+
     var toTop = $('a.to-top');
 
     if(element === 'home') {
@@ -78,7 +80,7 @@ function hideNav(element) {
 }
 
 
-// SCROLL INDICATOR - ON SCROLL
+// Scroll indicator - On scroll
 
 var currentPage;
 
@@ -88,19 +90,21 @@ function getUserPosition() {
 }
 
 //On scroll
-$(window).on('scroll', function() {
+$(window).on('scroll', elementPositions);
+
+//Get element positions
+function elementPositions() {
 
     var scrollTop = getUserPosition();
-
-    var homeMarker = $('a.nav-item.home');
+    var homeMarker = $('.desktop > .nav-items > a.nav-item.home');
     var infoTop = $('#info').offset().top;
-    var infoMarker = $('a.nav-item.info');
+    var infoMarker = $('.desktop > .nav-items > a.nav-item.info');
     var topListTop = $('#top-list').offset().top;
-    var topListMarker = $('a.nav-item.top-list');
+    var topListMarker = $('.desktop > .nav-items > a.nav-item.top-list');
     var coachellaTop = $('#coachella').offset().top;
-    var coachellaMarker = $('a.nav-item.coachella');
+    var coachellaMarker = $('.desktop > .nav-items > a.nav-item.coachella');
     var mostRecentTop = $('#most-recent').offset().top;
-    var mostRecentMarker = $('a.nav-item.most-recent');
+    var mostRecentMarker = $('.desktop > .nav-items > a.nav-item.most-recent');
     var footerTop = $('footer').offset().top;
 
     if (scrollTop > (footerTop - 500)) {
@@ -132,7 +136,8 @@ $(window).on('scroll', function() {
         currentElement('home', homeMarker);
         hideNav('home');
     } 
-});
+
+}
 
 //Highlight marker for current element
 function currentElement($el, $marker) {
@@ -140,7 +145,6 @@ function currentElement($el, $marker) {
     $marker.addClass('active');
     currentUrl($el);
 }
-
 
 //Change url to current element
 function currentUrl(element) {
@@ -157,4 +161,28 @@ function currentUrl(element) {
 
 }
 
+//MOBILE NAVIGATION
 
+//Change menu depending on browser width
+function setMenu() {
+
+    var mainNav = $('.main-nav');
+    var browserWidth = $(window).width();
+
+    if (browserWidth >= 1200) {
+
+        //Use desktop menu
+        mainNav.removeClass('mobile');
+        mainNav.addClass('desktop');
+
+    } else {
+
+        //Use mobile menu
+        mainNav.removeClass('desktop');
+        mainNav.addClass('mobile');
+
+    }
+
+}
+
+$(window).on('load resize scroll', setMenu);

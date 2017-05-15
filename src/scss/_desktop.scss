@@ -20,6 +20,54 @@ section.home {
 }
 
 /**********************
+    Scroll indicator
+**********************/
+
+.main-nav.desktop {
+    visibility: hidden;
+    position: fixed;
+    z-index: 3;
+    margin: 0;
+    top: 50%;
+    right: 31px;
+    transform: translateY(-50%);
+    input[type=checkbox], label {
+        display: none;
+    }
+    .nav-item p:after {
+        content: '\25CB';
+    }
+    .nav-item {
+        color: $lightpeach;
+        text-decoration: none;
+        font-size: 1.8em;
+        transition: color 0.3s;
+        display: block;
+    }
+    .nav-item p {
+        text-align: right;
+    }
+    .nav-item:hover p:after,
+    .nav-item.active p:after {
+        font-size: 0.6em;
+        content: '\25C9';
+        color: $peach;
+    }
+    .nav-item span {
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+        margin-right: 10px;
+        font-size: 0.55em;
+        text-transform: uppercase;
+    }
+    .nav-item:hover span {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/**********************
      Section: Info
 **********************/
 
@@ -80,5 +128,15 @@ section.coachella {
     }
     .slide-in {
         margin: 0;
+    }
+}
+
+/**********************
+         Footer
+**********************/
+
+footer {
+    a {
+        padding: 12px 32px;
     }
 }

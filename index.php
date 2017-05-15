@@ -9,12 +9,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <nav class="main-nav">
-        <a href="#home" class="nav-item home"><p><span>Home</span></p></a>
-        <a href="#info" class="nav-item info"><p><span>Info</span></p></a>
-        <a href="#top-list" class="nav-item top-list"><p><span>Top List</span></p></a>
-        <a href="#coachella" class="nav-item coachella"><p><span>Coachella</span></p></a>
-        <a href="#most-recent" class="nav-item most-recent"><p><span>Most Recent</span></p></a>
+    <nav class="main-nav desktop mobile">
+        <input id="menu" type="checkbox"/>
+        <label for="menu" class="menu">
+            <span>Menu</span>
+        </label>
+        <div class="nav-items">
+            <a href="#home" class="nav-item home"><p><span>Home</span></p></a>
+            <a href="#info" class="nav-item info"><p><span>Info</span></p></a>
+            <a href="#top-list" class="nav-item top-list"><p><span>Top List</span></p></a>
+            <a href="#coachella" class="nav-item coachella"><p><span>Coachella</span></p></a>
+            <a href="#most-recent" class="nav-item most-recent"><p><span>Most Recent</span></p></a>
+        </div>
     </nav>
 
     <section id="home" class="home">

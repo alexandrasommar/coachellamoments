@@ -20,54 +20,111 @@ h2 {
     text-transform: uppercase;
     font-size: 1.5em;
     line-height: 1.5em;
+    letter-spacing: 2px;
 }
 p {
     line-height: 1.5em;
 }
 
 /**********************
-    Scroll indicator
+    Hamburger menu
 **********************/
 
-.main-nav {
-    visibility: hidden;
-    position: fixed;
-    z-index: 1;
-    margin: 0;
-    top: 50%;
-    right: 31px;
-    transform: translateY(-50%);
-    .nav-item p:after {
-        content: '\25CB';
+.main-nav.mobile {
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: #fff;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+        top: -800px;
+        transition: all 1s;
+        z-index: 3;
+        a {
+            font-size: 1.2em;
+            font-weight: normal;
+            text-transform: uppercase;
+            color: #efefef;
+            margin-bottom: 8px;
+            line-height: 2em;
+            letter-spacing: 2px;
+            text-decoration: none;
+            &:hover {
+                color: $sunny;
+            }
+        }
     }
-    .nav-item {
-        color: $lightpeach;
-        text-decoration: none;
-        font-size: 1.8em;
-        transition: color 0.3s;
-        display: block;
-    }
-    .nav-item p {
-        text-align: right;
-    }
-    .nav-item:hover p:after,
-    .nav-item.active p:after {
-        font-size: 0.6em;
-        content: '\25C9';
-        //color: #563936;
-        color: $peach;
-    }
-    .nav-item span {
-        visibility: hidden;
+    input[type=checkbox] {
+        position: absolute;
         opacity: 0;
-        transition: 0.3s;
-        margin-right: 10px;
-        font-size: 0.55em;
-        text-transform: uppercase;
+        top: 25px;
+        right: 25px; 
+        &:checked ~ .nav-items {
+            top: 0;
+            background-color: $peach;
+            opacity: 1;
+        }
+        &:checked ~ .menu {
+            z-index: 4; 
+            span {
+              transform: scale3d(0,1,1);
+            }
+            &:after{
+              transform: rotate3d(0,0,1,45deg);
+            }
+            &:before{
+              transform: rotate3d(0,0,1,-45deg);
+            }
+        }
     }
-    .nav-item:hover span {
-        visibility: visible;
-        opacity: 1;
+    .menu {
+        width: 55px;
+        height: 45px;
+        display: block;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        position: fixed;
+        z-index: 1;
+        background: $peach;
+        opacity: 0.90;
+        padding: 11px;
+        box-sizing: border-box;
+        &:after,&:before {
+            content: '';
+            width: 55%;
+            height: 2.5px;
+            position: absolute;
+            background: #fff;
+            top: 46%;
+            left: 24%;
+            transition: transform 0.5s;
+            transform-origin: 50% 50%;
+        }
+        &:after{
+            transform: translate3d(0,-10px,0) scale3d(0.8,1,1);
+        }
+        &:before {
+            transform: translate3d(0,10px,0) scale3d(0.8,1,1);
+        }
+        span {
+            position: absolute;
+            width: 43%;
+            overflow: hidden;
+            height: 2.5px;
+            background: #f2f2f2;
+            top: 46%;
+            left: 29%;
+            transition: all;
+        }
+        &:hover {
+            background: $sunny;
+        }
     }
 }
 
@@ -213,7 +270,7 @@ footer {
         position: fixed;
         right: 0;
         bottom: 0;
-        padding: 12px 32px;
+        padding: 8px 21px;
         background: $peach;
         font-size: 1.5em;
         text-decoration: none;
