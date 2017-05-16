@@ -107,7 +107,7 @@ function elementPositions() {
     var mostRecentMarker = $('.desktop > .nav-items > a.nav-item.most-recent');
     var footerTop = $('footer').offset().top;
 
-    if (scrollTop > (footerTop - 500)) {
+    if (scrollTop > (footerTop - 600)) {
         
         hideNav('footer');
 
