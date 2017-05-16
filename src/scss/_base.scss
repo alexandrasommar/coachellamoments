@@ -92,7 +92,6 @@ p {
         position: fixed;
         z-index: 1;
         background: $peach;
-        opacity: 0.90;
         padding: 11px;
         box-sizing: border-box;
         &:after,&:before {
@@ -299,10 +298,10 @@ footer.footer {
     }
     .social {
         font-size: 2em;
-        color: $purple;
-        transition: 0.3s;
+        color: #833d8e;
         i {
             margin: 0 5px;
+            transition: 0.2s;
             &:hover {
                 color: $sunny;
             }
