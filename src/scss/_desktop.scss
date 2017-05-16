@@ -38,7 +38,7 @@ section.home {
         content: '\25CB';
     }
     .nav-item {
-        color: $lightpeach;
+        color: #999;
         text-decoration: none;
         font-size: 1.8em;
         transition: color 0.3s;
@@ -56,10 +56,12 @@ section.home {
     .nav-item span {
         visibility: hidden;
         opacity: 0;
-        transition: 0.3s;
+        transition: 0.2s;
         margin-right: 10px;
         font-size: 0.55em;
         text-transform: uppercase;
+        background: #fff;
+        padding: 6px 10px;
     }
     .nav-item:hover span {
         visibility: visible;
