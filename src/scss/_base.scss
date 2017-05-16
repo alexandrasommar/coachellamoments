@@ -263,10 +263,53 @@ section.coachella {
          Footer
 **********************/
 
-footer {
-    background: $nude;
-    height: 45vh;
-    a {
+footer.footer {
+    background: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 100px;
+    padding: 0 0 50px 0;
+    .logo, .palm, .social {
+        margin-bottom: 30px;
+        height: auto;
+    }
+    .palm {
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        width: 100%;
+        svg {
+            height: 180px;
+            position: absolute;
+            bottom: 210px;
+        }
+    }
+    .logo {
+        img {
+            width: 200px;
+            height: auto; 
+        }
+        p {
+            font-size: 0.57em;
+            margin: 5px 0 0 0;
+        }
+    }
+    .social {
+        font-size: 2em;
+        color: $purple;
+        transition: 0.3s;
+        i {
+            margin: 0 5px;
+            &:hover {
+                color: $sunny;
+            }
+        }
+    }
+
+    a.to-top {
         position: fixed;
         right: 0;
         bottom: 0;

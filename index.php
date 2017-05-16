@@ -67,13 +67,26 @@
         </div> <!-- .posts -->
     </section> <!-- .top-list -->
 
-    <footer>
-        <p>Footer</p>
+    <footer class="footer">
+        <div class="palm">
+            <?php include 'php/palmtree.php'; ?>
+        </div>
+        <div class="logo">
+            <img src="img/logo.png" alt="logo">
+            <p>COACHELLA VALLEY MUSIC AND ARTS FESTIVAL</p>
+        </div>
+        <div class="social">
+            <i class="fa fa-facebook-official"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-youtube-square"></i>
+            <i class="fa fa-twitter-square"></i>
+        </div>
         <a href="#home" class="to-top">&#8743;</a>
     </footer>
 
     <!-- Script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/a391b5c69b.js"></script>
     <script type="text/javascript" src="js/all.js"></script>
 </body>
 </html>

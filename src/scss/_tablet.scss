@@ -49,3 +49,27 @@ section.coachella {
         width: 70%;
     }
 }
+/**********************
+         Footer
+**********************/
+
+footer.footer {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    position: relative;
+    padding: 50px 0;
+    .logo, .palm, .social {
+        width: 25%;
+        margin: 0 auto;
+    }
+    .logo {
+        padding-top: 25px;
+    }
+    .palm {
+        svg {
+            height: 240px;
+            position: absolute;
+            bottom: 50px;
+        }
+    }
+}

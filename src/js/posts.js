@@ -2,12 +2,12 @@
 
     const mostRecent = document.querySelector('.most-recent .posts');
     const topList = document.querySelector('.top-list .posts');
-    const jsonTopList = 'src/json/toplist.json';
-    const jsonMostRecent = 'src/json/mostrecent.json';
+    const jsonTopList = '../json/toplist.json';
+    const jsonMostRecent = '../json/mostrecent.json';
 
 // Fetch request file
 function fetchRequest() {
-    fetch('request.php')
+    fetch('./php/request.php')
         .catch(function(error) {
         console.log('There has been a problem with your fetch operation: ' + error.message);
     });
@@ -19,7 +19,6 @@ function fetchRequest() {
         .then(function(result) {
             return result.json();
         }).then(function(result) {
-            console.log(result);
             displayResults(result, element);
         });
     }

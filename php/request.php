@@ -25,7 +25,7 @@ function saveJson($filter, $filename) {
           // Saves the data in json file
     }
     var_dump($data);
-    file_put_contents("src/json/".$filename.".json", json_encode($outdata));
+    file_put_contents("../json/".$filename.".json", json_encode($outdata));
 }
 saveJson($media, $fn_mostrecent);
 saveJson($topposts, $fn_toplist);

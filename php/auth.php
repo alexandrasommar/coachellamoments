@@ -1,7 +1,7 @@
 <?php 
 
 $code = isset($_GET['code']) ? $_GET['code'] : null;
-$redirectURI = "http://localhost:3000/src/php/auth.php";
+$redirectURI = "http://localhost:3000/php/auth.php";
 $clientID = "2897e5ded7e548479dc6184b505ada50";
 $clientSecret = "c0563d3400fb49e3a5480e6010bdf0d4";
 
