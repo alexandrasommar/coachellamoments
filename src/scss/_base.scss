@@ -11,6 +11,7 @@
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    box-sizing: border-box;
 }
 section {
     min-width: 100vw;
@@ -18,14 +19,18 @@ section {
 }
 h2 {
     text-transform: uppercase;
-    font-size: 1.5em;
-    line-height: 1.5em;
+    font-size: 1.3em;
+    line-height: 1.2em;
     letter-spacing: 2px;
 }
 p {
     line-height: 1.5em;
 }
-
+.posts {
+   img {
+     max-width: 100px;
+   } 
+}
 /**********************
     Hamburger menu
 **********************/
@@ -45,6 +50,7 @@ p {
         top: -800px;
         transition: all 1s;
         z-index: 3;
+        background-color: $peach;
         a {
             font-size: 1.2em;
             font-weight: normal;
@@ -66,10 +72,10 @@ p {
         right: 25px; 
         &:checked ~ .nav-items {
             top: 0;
-            background-color: $peach;
             opacity: 1;
         }
         &:checked ~ .menu {
+            background: $sunny;
             z-index: 4; 
             span {
               transform: scale3d(0,1,1);
@@ -90,7 +96,7 @@ p {
         top: 0;
         right: 0;
         position: fixed;
-        z-index: 1;
+        z-index: 5;
         background: $peach;
         padding: 11px;
         box-sizing: border-box;
@@ -120,9 +126,6 @@ p {
             top: 46%;
             left: 29%;
             transition: all;
-        }
-        &:hover {
-            background: $sunny;
         }
     }
 }
@@ -175,7 +178,7 @@ section.info {
     padding-top: 20px;
     img {
         position: absolute;
-        height: 41vh;
+        height: 270px;
         z-index: 1;
         margin: 110px 0 0 2%;
         opacity: 0;
@@ -185,25 +188,47 @@ section.info {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         background-image: url(../img/coachella.jpg);
         background-size: cover;
         background-position: 50% 40%;
         background-repeat: no-repeat;
-        margin-top: 80px;
+        margin-top: 50px;
         width: 100%;
         height: 50vh;
         z-index: 0;
+        box-sizing: border-box;
+        position: relative;
         .text-block {
             position: absolute;
             background-color: $lightpeach;
-            opacity: 0.97;
             color: $purple;
             box-sizing: border-box;
-            margin: 200px 10% 2% 0;
+            top: 210px;
             padding: 4% 8%;
-            width: 95%;
             height: auto;
-            min-height: 50vh;
+            margin: 0 auto;
+            left: 10px;
+            right: 10px;
+            span {
+                display: block;
+                margin: 10px 0 25px 0;
+            }
+            a {
+                text-decoration: none;
+                color: $purple;
+                font-weight: 500;
+                padding: 5px 0;
+                text-transform: uppercase;
+                font-size: 0.85em;
+                border-bottom: 5px solid #fff;
+            }
+            .deadline {
+                text-transform: uppercase;
+                font-size: 0.7em;
+                padding-top: 15px;
+                text-align: right;
+            }
         }
     }
 }

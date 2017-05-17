@@ -25,17 +25,16 @@ section.home {
 
 section.info {
     img {
-        height: 50vh;
         margin: 110px 0 0 5%;
+        height: 400px;
     }
     .bg-block {
         .text-block {
-            margin: 250px 10% 2% 0;
-            padding: 4% 8%;
+            padding: 3% 8%;
             width: 95%;
             height: auto;
-            min-height: 50vh;
             max-width: 800px;
+            top: 300px;
         }
     }
 }

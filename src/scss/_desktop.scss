@@ -78,7 +78,7 @@ section.info {
     align-items: center;
     img {
         position: absolute;
-        height: 80vh;
+        height: 600px;
         z-index: 1;
         margin: 300px 0 0 10%;
         opacity: 0;
@@ -89,17 +89,16 @@ section.info {
         justify-content: flex-end;
         z-index: 0;
         margin-top: 0;
+        background-position: 50% 40%;
+
         .text-block {
             position: relative;
-            background-color: $lightpeach;
             opacity: 0.97;
-            color: $purple;
-            box-sizing: border-box;
             margin: 2% 10% 2% 0;
             padding: 20px 60px;
             width: 50%;
             height: auto;
-            min-height: 35vh;
+            top: 0;
         }
     }
 }

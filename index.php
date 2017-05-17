@@ -37,8 +37,9 @@
         <img src="img/people.png" alt="Coachella visistors" class="info-img">
         <div class="bg-block">
             <div class="text-block">
-                <h2>What's your best Coachella moment?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quamquam tu hanc copiosiorem etiam soles dicere. Atqui reperies, inquit, in hoc quidem pertinacem; Et ille ridens: Video, inquit, quid agas; Summum ením bonum exposuit vacuitatem doloris; Duo Reges: constructio interrete.</p>
+                <h2>Share your best Coachella moment!</h2>
+                <p>Find your best moment from last year's Coachella and share it with the world! Use #coachellamoment to tag your image on Instagram, no later than Friday, June 2nd. The Coachella moment with most likes by the end of the contenst wins two free tickets to next year's festival!</p>
+                <span><a href="https://www.instagram.com/">Start sharing now</a></span>
             </div>
         </div>
     </section>
@@ -70,7 +71,7 @@
 
     <footer class="footer">
         <div class="palm">
-            <?php include 'php/palmtree.php'; ?>
+            <?php //include 'php/palmtree.php'; ?>
         </div>
         <div class="logo">
             <img src="img/logo.png" alt="logo">
