@@ -52,7 +52,7 @@
 
     <section id="coachella" class="coachella">
         <div class="img-block">
-            <img src="../img/coachella2.jpg">
+            <img src="img/coachella2.jpg">
         </div>
         <div class="text-block animated-text">
             <h2>Coachella festival</h2>
