@@ -312,11 +312,14 @@ footer.footer {
     }
     .palm {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         height: 100px;
         width: 100%;
         svg {
             height: 180px;
+            width: 100%;
             position: absolute;
             bottom: 210px;
         }
