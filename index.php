@@ -87,6 +87,7 @@
     </footer>
 
     <!-- Script -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/all.js"></script>
 </body>
