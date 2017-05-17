@@ -215,6 +215,14 @@ section.info {
                 font-weight: 600;
             }
             a {
+                text-decoration: none;
+                color: $purple;
+                transition: 0.3s;
+                &:hover {
+                    color: $sunny;
+                }
+            }
+            a.insta-link {
                 display: inline-block;
                 margin: 10px 0 25px 0;
                 text-decoration: none;
