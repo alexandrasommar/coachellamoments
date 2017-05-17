@@ -154,6 +154,7 @@ section.home {
             border: 2px solid #fff;
             padding: 40px 25px;
             box-sizing: border-box;
+            margin-bottom: 120px;
         }
         img {
             position: absolute;
@@ -210,18 +211,24 @@ section.info {
             margin: 0 auto;
             left: 10px;
             right: 10px;
-            span {
-                display: block;
-                margin: 10px 0 25px 0;
+            strong {
+                font-weight: 600;
             }
             a {
+                display: inline-block;
+                margin: 10px 0 25px 0;
                 text-decoration: none;
                 color: $purple;
-                font-weight: 500;
+                font-weight: 600;
                 padding: 5px 0;
                 text-transform: uppercase;
                 font-size: 0.85em;
+                border: 0;
                 border-bottom: 5px solid #fff;
+                transition: 0.3s;
+                &:hover {
+                    border-bottom: 5px solid $sunny;
+                }
             }
             .deadline {
                 text-transform: uppercase;
@@ -263,18 +270,21 @@ section.coachella {
         p {
             padding: 0;
         }
-        button {
+        a {
+            box-sizing: border-box;
+            display: inline-block;
             border: 0;
-            outline: 0;
             text-transform: uppercase;
             text-decoration: none;
             background-color: $peach;
             color: #fff;
             padding: 20px;
-            margin-top: 20px;
             width: 100%;
+            text-align: center;
+            margin-top: 15px;
+            transition: 0.3s;
             &:hover {
-                text-decoration: underline;
+                background-color: $sunny;
             }
         }
     }

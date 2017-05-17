@@ -38,8 +38,8 @@
         <div class="bg-block">
             <div class="text-block">
                 <h2>Share your best Coachella moment!</h2>
-                <p>Find your best moment from last year's Coachella and share it with the world! Use #coachellamoment to tag your image on Instagram, no later than Friday, June 2nd. The Coachella moment with most likes by the end of the contenst wins two free tickets to next year's festival!</p>
-                <span><a href="https://www.instagram.com/">Start sharing now</a></span>
+                <p>Find your best moment from last year's Coachella and share it with the world! Use <strong>#coachellamoment</strong> to tag your image on Instagram, no later than Friday, June 2nd. The Coachella moment with most likes by the end of the contenst wins two free tickets to next year's festival!</p>
+                <a href="https://www.instagram.com/">Start sharing now</a>
             </div>
         </div>
     </section>
@@ -58,7 +58,7 @@
         <div class="text-block animated-text">
             <h2>Coachella festival</h2>
             <p>Ready to make your Coachella experience exceptional? Everything you want to know before you hit the desert can be found in our Coachella Guides. From Passes and Travel to Camping and Cuisine, we’ve got you covered.</p>
-            <button id="visit-coachella">Visit Coachella official</button>
+            <a href="https://www.coachella.com/" target="_blank">Visit Coachella official</a>
         </div>
     </section>
 
@@ -71,7 +71,7 @@
 
     <footer class="footer">
         <div class="palm">
-            <?php //include 'php/palmtree.php'; ?>
+            <?php include 'php/palmtree.php'; ?>
         </div>
         <div class="logo">
             <img src="img/logo.png" alt="logo">
