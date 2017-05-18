@@ -2,8 +2,8 @@
 
     const mostRecent = document.querySelector('.most-recent .posts');
     const topList = document.querySelector('.top-list .posts');
-    const jsonTopList = 'json/toplist.json';
-    const jsonMostRecent = 'json/mostrecent.json';
+    const jsonTopList = '../json/toplist.json';
+    const jsonMostRecent = '../json/mostrecent.json';
 
 // Fetch request file
 function fetchRequest() {
