@@ -126,6 +126,17 @@ section.coachella {
         a {
             width: auto;
         }
+        div.link {
+            margin-top: 25px;
+            width: 260px;
+            a {
+                width: 260px;
+                padding: 20px 2px;
+                &:hover ~ div.hover {
+                    width: 260px;
+                }
+            }
+        }
     }
     .slide-in {
         margin: 0;

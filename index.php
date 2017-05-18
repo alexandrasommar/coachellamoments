@@ -43,8 +43,7 @@
                 <h2>Share your best Coachella moment!</h2>
                 <p>Find your best moment from last year's Coachella and share it with the world! Use <strong><a href="https://www.instagram.com/explore/tags/coachellafestival/" target="_blank">#coachellamoment</a></strong> to tag your image on Instagram, no later than Friday, June 2nd. The Coachella moment with most likes by the end of the contest wins two free tickets to next year's festival!</p>
                 <a href="https://www.instagram.com/" class="insta-link">Start sharing now</a> 
-                <div class="hover">
-                </div>
+                <div class="hover"></div>
             </div> <!-- .text-block -->
         </div> <!-- .bg-block -->
     </section> <!-- #info .info -->
@@ -65,7 +64,10 @@
         <div class="text-block animated-text">
             <h2>Coachella festival</h2>
             <p>Ready to make your Coachella experience exceptional? Everything you want to know before you hit the desert can be found in our Coachella Guides. From Passes and Travel to Camping and Cuisine, we’ve got you covered.</p>
-            <a href="https://www.coachella.com/" target="_blank">Visit Coachella official</a>
+            <div class="link">
+                <a href="https://www.coachella.com/" target="_blank">Visit Coachella official</a>
+                <div class="hover"></div>
+            </div>
         </div> <!-- .text-block .animated-text -->
     </section> <!-- #coachella .coachella -->
 
