@@ -10,20 +10,22 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="main-nav desktop mobile">
-        <input id="menu" type="checkbox" />
+        <input id="menu" type="checkbox">
         <label for="menu" class="menu">
             <span>Menu</span>
-        </label>
+        </label> <!-- .menu -->
         <div class="nav-items">
             <a href="#home" class="nav-item home"><p><span>Home</span></p></a>
             <a href="#info" class="nav-item info"><p><span>Info</span></p></a>
             <a href="#top-list" class="nav-item top-list"><p><span>Top List</span></p></a>
             <a href="#coachella" class="nav-item coachella"><p><span>Coachella</span></p></a>
             <a href="#most-recent" class="nav-item most-recent"><p><span>Most Recent</span></p></a>
-        </div>
-    </nav>
+        </div> <!-- .nav-items -->
+    </nav> <!-- .main-nav .desktop .mobile -->
 
+    <!-- Home page -->
     <section id="home" class="home">
         <div class="heading">
             <h1>#coachellamoment</h1>
@@ -31,60 +33,67 @@
                 <img src="img/scroll.png" alt="scoll button">
             </a>
         </div> <!-- .heading -->
-    </section> <!-- .banner -->
+    </section> <!-- #home .home -->
 
+    <!-- About the contest -->
     <section id="info" class="info">
         <img src="img/people.png" alt="Coachella visistors" class="info-img">
         <div class="bg-block">
             <div class="text-block">
                 <h2>Share your best Coachella moment!</h2>
-                <p>Find your best moment from last year's Coachella and share it with the world! Use <strong><a href="https://www.instagram.com/explore/tags/coachellafestival/" target="_blank">#coachellamoment</a></strong> to tag your image on Instagram, no later than Friday, June 2nd. The Coachella moment with most likes by the end of the contenst wins two free tickets to next year's festival!</p>
-                <a href="https://www.instagram.com/" class="insta-link">Start sharing now</a>
-            </div>
-        </div>
-    </section>
+                <p>Find your best moment from last year's Coachella and share it with the world! Use <strong><a href="https://www.instagram.com/explore/tags/coachellafestival/" target="_blank">#coachellamoment</a></strong> to tag your image on Instagram, no later than Friday, June 2nd. The Coachella moment with most likes by the end of the contest wins two free tickets to next year's festival!</p>
+                <a href="https://www.instagram.com/" class="insta-link">Start sharing now</a> 
+                <div class="hover">
+                </div>
+            </div> <!-- .text-block -->
+        </div> <!-- .bg-block -->
+    </section> <!-- #info .info -->
 
+    <!-- Top list -->
     <section id="top-list" class="top-list">
         <h2>Most popular</h2>
         <div class="posts">
             <!-- Posts-->
         </div> <!-- .posts -->
-    </section> <!-- .top-list -->
+    </section> <!-- #top-list .top-list -->
 
+    <!-- About the festival (remote link to Coachella) -->
     <section id="coachella" class="coachella">
         <div class="img-block">
             <img src="img/coachella2.jpg">
-        </div>
+        </div> <!-- .img-block -->
         <div class="text-block animated-text">
             <h2>Coachella festival</h2>
             <p>Ready to make your Coachella experience exceptional? Everything you want to know before you hit the desert can be found in our Coachella Guides. From Passes and Travel to Camping and Cuisine, we’ve got you covered.</p>
             <a href="https://www.coachella.com/" target="_blank">Visit Coachella official</a>
-        </div>
-    </section>
+        </div> <!-- .text-block .animated-text -->
+    </section> <!-- #coachella .coachella -->
 
+    <!-- Most recent posts -->
     <section id="most-recent" class="most-recent">
         <h2>Latests posts</h2>
         <div class="posts">
             <!-- Posts-->
         </div> <!-- .posts -->
-    </section> <!-- .top-list -->
+    </section> <!-- #most-recent .most-recent -->
 
     <footer class="footer">
         <div class="palm">
+            <!-- Import SVG-image -->
             <?php include 'php/palmtree.php'; ?>
-        </div>
+        </div> <!-- .palm -->
         <div class="logo">
             <img src="img/logo.png" alt="logo">
             <p>COACHELLA VALLEY MUSIC AND ARTS FESTIVAL</p>
-        </div>
+        </div> <!-- .logo -->
         <div class="social">
             <i class="fa fa-facebook-official"></i>
             <i class="fa fa-instagram"></i>
             <i class="fa fa-youtube-square"></i>
             <i class="fa fa-twitter-square"></i>
-        </div>
+        </div> <!-- .social -->
         <a href="#home" class="to-top">&#8743;</a>
-    </footer>
+    </footer> <!-- .footer -->
 
     <!-- Script -->
     <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch"></script>
