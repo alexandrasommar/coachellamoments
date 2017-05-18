@@ -43,11 +43,11 @@ function fetchRequest() {
         var imgArr;
 
         for(let i = 0; i < 5; i++) {
-            
+
             element.innerHTML += `<div class="single"><a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}" class="active"></a></div>`;
             element.innerHTML += `<p>Likes: ${result[i].likes.count}</p>`;
 
-            imgArr = element.querySelectorAll('img.active');
+            imgArr = element.querySelectorAll('.single');
             currentImg = imgArr[i];
 
             currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
