@@ -28,13 +28,39 @@
       return Math.floor(Math.random() * (max - min + 1)) + min + unit;
   }
 
+  function aLittleBitRandomness(number) {
+    return (number + (2 * (Math.random()+1)) + 's');
+  }
+
+  // set animation duration based on image height
+  function speed(height, images) {
+      // var animationDur = 'animation-duration';
+      if (height < 190) {
+          images.style.animationDuration = aLittleBitRandomness(36);
+          images.style.zIndex = '-4';
+          console.log(images.style);
+      } else if (height > 190 && height < 230) {
+          images.style.animationDuration = aLittleBitRandomness(32);
+          images.style.zIndex = '-3';
+          console.log(images.style);
+      } else if (height > 230 && height < 270) {
+          images.style.animationDuration = aLittleBitRandomness(28);;
+          images.style.zIndex = '-2';
+          console.log(images.style);
+      } else {
+          images.style.animationDuration = aLittleBitRandomness(24);;
+          images.style.zIndex = '-1';
+          //console.log(images);
+      }
+  }
+
   //Display result in HTML element
   function displayResults(result, element) {
 
       var options = {
           margin: {
               min: 2,
-              max: 10,
+              max: 20,
               unit: '%'
           },
           height: {
@@ -62,29 +88,11 @@
           currentImg = imgArr[i];
 
           currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
-          //currentImg.style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+          currentImg.style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
           var imageHeight = window.getComputedStyle(currentImg, null).getPropertyValue('height');
           speed(imageHeight.slice(0, -2), currentImg);
       }
 
-  }
-
-  // set animation duration based on image height
-  function speed(height, images) {
-      var animationDur = 'animation-duration';
-      if (height < 190) {
-          images.style.animationDur = '26s';
-  				console.log(images);
-      } else if (height > 190 && height < 230) {
-          images.style.animationDur = '24s';
-  				console.log(images);
-      } else if (height > 230 && height < 270) {
-          images.style.animationDur = '22s';
-  				console.log(images);
-      } else {
-          images.style.animationDur = '20s';
-          //console.log(images);
-      }
   }
 
   //fetchRequest();
