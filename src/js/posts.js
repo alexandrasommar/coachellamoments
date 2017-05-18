@@ -49,9 +49,14 @@
 
       for(let i = 0; i < 5; i++) {
 
-          element.innerHTML += `<div class="single active"><a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}"></a>`;
-          element.innerHTML += `<div class="content"><p>Likes: ${result[i].likes.count}</p>`;
-          element.innerHTML += `<i class="fa fa-heart" aria-hidden="true"></i></div></div>`;
+          element.innerHTML += `<div class="single active">
+                                  <a href="https://instagram.com/p/${result[i].code}">
+                                  <img src="${result[i].thumbnail_src}"></a>
+                                  <div class="content">
+                                    <p>Likes: ${result[i].likes.count}</p>
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                  </div>
+                                </div>`;
 
           imgArr = element.querySelectorAll('.single');
           currentImg = imgArr[i];
