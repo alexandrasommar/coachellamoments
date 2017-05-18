@@ -1,14 +1,20 @@
-// 1. I base finns det .posts img som definierar max-width: 100px: ta bort detta
+// 1. I n finns det .posts img som definierar max-width: 100px: ta bort detta
 // 2. Ta bort max-width på img i slider-css:en
 // 3. Problemet: loopen gör bara random på den allra första bilden, sedan blir alla därefter samma bredd. Verkar som att margin inte fungerar alls
 
+//document.addEventListener('DOMContentLoaded', function(e) {
+    
 
-// (function() {
+ //(function() {
 // // Loop through all images
 // //Animate the images/make them slide
 
-var images = document.querySelectorAll('section.top-list img');
+var section = document.querySelector('section.top-list');
+var images = section.getElementsByTagName('img');
 console.log(images.length);
+var arr = [].slice.call(images);
+let arry = [...images]; 
+//console.log(arr);
 
 var options = {
     margin: {
@@ -30,14 +36,26 @@ function getRandomInt(min, max, unit) {
 
 // set randomized width and margin
 //PROBLEM all images gets the same width AND no margin????????
-function randomize() {
-    for (var i = 0, x = images.length; i < x; i++) {
-        images[i].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
-        images[i].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
-    }
-}
+//function randomize(images) {
+    // for (var i = 0, x = images; i < 5; i++) {
+    //     images[i].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    //     images[i].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    // }
+    images[0].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    images[0].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    images[1].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    images[1].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    images[2].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    images[2].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    images[3].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    images[3].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    images[4].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    images[4].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    images[5].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    images[5].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+//}
 
-randomize();
+//randomize();
     
 // set animation duration based on image width
 // function speed(width, images) {
@@ -74,7 +92,7 @@ randomize();
 // }
 // })();
 
-
+//});
 
 // (function(){
 //     

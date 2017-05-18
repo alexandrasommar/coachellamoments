@@ -27,7 +27,7 @@ function fetchRequest() {
     function displayResults(result, element) {
 
         for(var i = 0; i < 5; i++) {
-            element.innerHTML += `<a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}"></a>`;
+            element.innerHTML += `<a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}" class="active"></a>`;
             element.innerHTML += `<p>Likes: ${result[i].likes.count}</p>`;
         }
     }
@@ -41,7 +41,7 @@ function fetchRequest() {
         fetchRequest();
         fetchResults(jsonTopList, topList);
         fetchResults(jsonMostRecent, mostRecent);
-    },(1000 * 60 * 1) );
+    },(1000 * 60 * 10) );
 
 
 })();
