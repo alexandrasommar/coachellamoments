@@ -253,6 +253,71 @@ section.info {
 }
 
 /**********************
+     Section: Posts
+**********************/
+
+.posts {
+    display: flex;
+    position: relative;
+    width: 300%;
+    .single {
+        display: inline-block;
+        animation-name: slideshow;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        box-sizing: border-box;
+        position: absolute;
+        transition: 0.3s;
+        border: solid 6px white;
+        position: absolute;
+        box-shadow: 0 0 9px 1px rgba(228, 225, 225, 0.2);
+        &:hover {
+            animation-play-state: paused;
+            z-index: 1;
+            transform-origin: center;
+            height: 310px !important;
+            .content {
+                visibility: visible;
+            }
+            img {
+                filter: brightness(75%);
+            }
+        }
+        img {
+            height: 100%;
+            z-index: 1;
+            position: relative;
+            border: 1px solid #ccc;
+        }
+        .content {
+            visibility: hidden;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+            position: absolute;
+            display: flex;
+            color: #fff;
+            transition: all 0.1s ease;
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            i {
+                font-size: 1.8em;
+            }
+            p {
+                margin: 3px 15px 0 0;
+            }
+        }
+    }
+    @keyframes slideshow {
+        0%   {transform: translateX(1500px)}
+        100% {transform: translateX(-200px)}
+    }
+}
+
+
+/**********************
    Section: Coachella
 **********************/
 
