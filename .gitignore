@@ -1,5 +1,6 @@
-css/style.css
-js/all.js
+css/*
+js/*
+json/*
 gulpfile.js
 package.json
 node_modules/*
