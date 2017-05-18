@@ -37,19 +37,19 @@
       // var animationDur = 'animation-duration';
       if (height < 190) {
           images.style.animationDuration = aLittleBitRandomness(36);
-          images.style.zIndex = '-4';
+          images.style.zIndex = '2';
           console.log(images.style);
       } else if (height > 190 && height < 230) {
           images.style.animationDuration = aLittleBitRandomness(32);
-          images.style.zIndex = '-3';
+          images.style.zIndex = '3';
           console.log(images.style);
       } else if (height > 230 && height < 270) {
           images.style.animationDuration = aLittleBitRandomness(28);;
-          images.style.zIndex = '-2';
+          images.style.zIndex = '4';
           console.log(images.style);
       } else {
           images.style.animationDuration = aLittleBitRandomness(24);;
-          images.style.zIndex = '-1';
+          images.style.zIndex = '5';
           //console.log(images);
       }
   }
