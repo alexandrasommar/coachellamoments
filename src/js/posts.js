@@ -44,7 +44,7 @@ function fetchRequest() {
 
         for(let i = 0; i < 5; i++) {
             
-            element.innerHTML += `<a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}" class="active"></a>`;
+            element.innerHTML += `<div class="single"><a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}" class="active"></a></div>`;
             element.innerHTML += `<p>Likes: ${result[i].likes.count}</p>`;
 
             imgArr = element.querySelectorAll('img.active');
