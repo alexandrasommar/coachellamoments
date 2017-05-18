@@ -26,10 +26,34 @@ function fetchRequest() {
     //Display result in HTML element
     function displayResults(result, element) {
 
-        for(var i = 0; i < 5; i++) {
+        var options = {
+            margin: {
+                min: 2,
+                max: 50,
+                unit: '%'
+            },
+                height: {
+                min: 150,
+                max: 300,
+                unit: 'px'
+            }
+        };
+
+        var currentImg;
+        var imgArr;
+
+        for(let i = 0; i < 5; i++) {
+            
             element.innerHTML += `<a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}" class="active"></a>`;
             element.innerHTML += `<p>Likes: ${result[i].likes.count}</p>`;
+
+            imgArr = element.querySelectorAll('img.active');
+            currentImg = imgArr[i];
+
+            currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
+
         }
+
     }
 
     //fetchRequest();

@@ -9,25 +9,61 @@
 // // Loop through all images
 // //Animate the images/make them slide
 
-var section = document.querySelector('section.top-list');
-var images = section.getElementsByTagName('img');
-console.log(images.length);
-var arr = [].slice.call(images);
-let arry = [...images]; 
-//console.log(arr);
+// function setImgStyle() {
 
-var options = {
-    margin: {
-        min: 2,
-        max: 50,
-        unit: '%'
-    },
-        width: {
-        min: 150,
-        max: 300,
-        unit: 'px'
-    }
-}
+//     var section = document.querySelector('section.top-list .posts');
+//     var images = section.getElementsByTagName('img');
+//     console.log(images.length);
+//     var arr = [].slice.call(images);
+//     let arry = [...images]; 
+
+//     var options = {
+//         margin: {
+//             min: 2,
+//             max: 50,
+//             unit: '%'
+//         },
+//             width: {
+//             min: 150,
+//             max: 300,
+//             unit: 'px'
+//         }
+//     };
+
+//     images[0].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+//     images[0].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+//     images[1].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+//     images[1].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+//     images[2].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+//     images[2].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+//     images[3].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+//     images[3].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+//     images[4].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+//     images[4].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+//     images[5].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+//     images[5].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+
+// }
+
+// var section = document.querySelector('section.top-list .posts');
+// var images = section.getElementsByTagName('img');
+// console.log(images.length);
+// var arr = [].slice.call(images);
+// let arry = [...images]; 
+// //console.log(arr);
+
+// var options = {
+//     margin: {
+//         min: 2,
+//         max: 50,
+//         unit: '%'
+//     },
+//         width: {
+//         min: 150,
+//         max: 300,
+//         unit: 'px'
+//     }
+// }
 
 // get random number based on max & min
 function getRandomInt(min, max, unit) {
@@ -41,18 +77,18 @@ function getRandomInt(min, max, unit) {
     //     images[i].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
     //     images[i].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
     // }
-    images[0].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
-    images[0].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
-    images[1].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
-    images[1].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
-    images[2].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
-    images[2].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
-    images[3].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
-    images[3].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
-    images[4].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
-    images[4].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
-    images[5].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
-    images[5].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    // images[0].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    // images[0].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    // images[1].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    // images[1].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    // images[2].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    // images[2].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    // images[3].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    // images[3].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    // images[4].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    // images[4].style.width = getRandomInt(options.width.min, options.width.max, options.width.unit);
+    // images[5].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+    // images[5].style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
 //}
 
 //randomize();
