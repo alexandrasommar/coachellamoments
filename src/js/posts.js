@@ -29,7 +29,7 @@ function fetchRequest() {
         var options = {
             margin: {
                 min: 2,
-                max: 50,
+                max: 10,
                 unit: '%'
             },
                 height: {
@@ -44,13 +44,14 @@ function fetchRequest() {
 
         for(let i = 0; i < 5; i++) {
 
-            element.innerHTML += `<div class="single"><a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}" class="active"></a></div>`;
+            element.innerHTML += `<div class="single active"><a href="https://instagram.com/p/${result[i].code}"><img src="${result[i].thumbnail_src}"></a></div>`;
             element.innerHTML += `<p>Likes: ${result[i].likes.count}</p>`;
 
             imgArr = element.querySelectorAll('.single');
             currentImg = imgArr[i];
 
             currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
+            // currentImg.style.margin = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
 
         }
 
