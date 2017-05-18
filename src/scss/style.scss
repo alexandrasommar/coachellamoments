@@ -1,5 +1,6 @@
-@import "base";
 @import "normalize"; 
+@import "base";
+@import "slider";
 
 @media screen and (min-width:768px) {
 	@import "tablet";
