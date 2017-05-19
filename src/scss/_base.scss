@@ -15,6 +15,7 @@ body {
     overflow-x: hidden;
 }
 section {
+  box-sizing: border-box;
     min-height: 100vh;
     min-width: 100vw;
 }
@@ -258,10 +259,11 @@ section.info {
 
 .posts {
     display: flex;
+    height: 80vh;
     position: relative;
-    width: 300%;
+    width: 100%;
     .single {
-        animation-duration: 20s;
+        animation-duration: 30s;
         animation-iteration-count: infinite;
         animation-name: slideshow;
         animation-timing-function: linear;
@@ -270,12 +272,10 @@ section.info {
         box-sizing: border-box;
         display: inline-block;
         position: absolute;
-        position: absolute;
         transition: 0.3s;
         &:hover {
             animation-play-state: paused;
-            filter: brightness(75%);
-            height: 310px !important;
+            height: 410px !important;
             transform-origin: center;
             z-index: 20!important;
             .content {
@@ -307,13 +307,14 @@ section.info {
                 font-size: 1.8em;
             }
             p {
-                margin: 3px 15px 0 0;
+                font-size: 1.2em;
+                margin: 0 0 0 10px;
             }
         }
     }
     @keyframes slideshow {
-        0%   {transform: translateX(1500px)}
-        100% {transform: translateX(-700px)}
+        0%   {transform: translateX(110vw)}
+        100% {transform: translateX(-30vw)}
     }
 }
 

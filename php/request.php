@@ -17,11 +17,11 @@ function saveJson($filter, $filename) {
     $outdata = array();
 
       for ($i = 0; $i < count($data->tag->$filter->nodes); $i++) {
-        $video = $data->tag->$filter->nodes[$i]->is_video;
-        var_dump($video);
-          if(!$video) {
+        // $video = $data->tag->$filter->nodes[$i]->is_video;
+        // var_dump($video);
+        //   if(!$video) {
             $outdata[] = $data->tag->$filter->nodes[$i];
-          }
+          //}
           // Saves the data in json file
     }
     var_dump($data);
