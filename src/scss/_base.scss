@@ -318,6 +318,37 @@ section.info {
     }
 }
 
+/**********************
+   Pop up window
+**********************/
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 500ms;
+  visibility: hidden;
+}
+.visible {
+  opacity: 1;
+  visibility: visible;
+  z-index: 100;
+}
+.pop-up {
+  background: #fff;
+  border-radius: 5px;
+  margin: 70px auto;
+  padding: 20px;
+  position: relative;
+  transition: all 5s ease-in-out;
+  width: 30%;
+  img {
+    width: 100%;
+  }
+}
 
 /**********************
    Section: Coachella
