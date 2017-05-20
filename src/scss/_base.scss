@@ -275,6 +275,7 @@ section.info {
         transition: 0.3s;
         &:hover {
             animation-play-state: paused;
+            cursor: pointer;
             height: 410px !important;
             transform-origin: center;
             z-index: 20!important;
