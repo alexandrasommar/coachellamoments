@@ -50,7 +50,7 @@
 
     <!-- Top list -->
     <section id="top-list" class="top-list">
-        <h2>Most popular</h2>
+        <h2>Top List</h2>
         <div class="overlay">
 
           <div class="pop-up">
@@ -79,7 +79,7 @@
 
     <!-- Most recent posts -->
     <section id="most-recent" class="most-recent">
-        <h2>Latests posts</h2>
+        <h2>Most recent posts</h2>
         <div class="posts">
             <!-- Posts-->
         </div> <!-- .posts -->

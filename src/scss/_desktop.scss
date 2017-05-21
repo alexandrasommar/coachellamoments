@@ -94,7 +94,7 @@ section.info {
             position: relative;
             opacity: 0.97;
             margin: 2% 10% 2% 0;
-            padding: 20px 60px;
+            padding: 20px 60px 40px 60px;
             width: 50%;
             height: auto;
             top: 0;
@@ -131,7 +131,7 @@ section.coachella {
             width: 260px;
             a {
                 width: 260px;
-                padding: 20px 2px;
+                padding: 20px 2px 0 0;
                 &:hover ~ div.hover {
                     width: 260px;
                 }
