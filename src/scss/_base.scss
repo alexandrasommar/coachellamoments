@@ -259,16 +259,18 @@ section.info {
 
 .posts {
     display: flex;
-    height: 80vh;
+    height: 70vh;
     position: relative;
     width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
     .single {
-        animation-duration: 30s;
+        animation-duration: 150s;
         animation-iteration-count: infinite;
         animation-name: slideshow;
         animation-timing-function: linear;
         border: solid 6px white;
-        box-shadow: 0 0 9px 1px rgba(228, 225, 225, 0.2);
+        box-shadow: 0 0 20px rgba(32, 14, 17, 0.15);
         box-sizing: border-box;
         display: inline-block;
         position: absolute;
@@ -276,7 +278,7 @@ section.info {
         &:hover {
             animation-play-state: paused;
             cursor: pointer;
-            height: 410px !important;
+            height: 310px !important;
             transform-origin: center;
             z-index: 20!important;
             .content {
@@ -294,7 +296,6 @@ section.info {
         }
         .content {
             color: #fff;
-            display: flex;
             display: flex;
             height: 100%;
             justify-content: center;
@@ -315,7 +316,7 @@ section.info {
     }
     @keyframes slideshow {
         0%   {transform: translateX(110vw)}
-        100% {transform: translateX(-30vw)}
+        100% {transform: translateX(-50vw)}
     }
 }
 
@@ -342,7 +343,7 @@ section.info {
 .pop-up {
   background: #fff;
   border-radius: 5px;
-  margin: 70px auto;
+  margin: 40px auto;
   padding: 20px;
   position: relative;
   transition: all 5s ease-in-out;
@@ -350,6 +351,58 @@ section.info {
   img {
     width: 100%;
   }
+  p {
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+    &:hover{
+        color: $peach;
+    }
+  }
+  .data {
+    display: inline-block;
+    font-size: 0.9em;
+    margin-right: 10px;
+  }
+  i {
+    margin: 0 5px 3px 1px;
+    font-size: 0.9em;
+  }
+    div.link {
+        background-color: $peach;
+        box-sizing: border-box;
+        height: 40px;
+        margin-top: 15px;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        a {
+            color: #fff;
+            height: 20px;
+            left: 0;
+            padding: 12px 0 0 0;
+            position: absolute;
+            text-decoration: none;
+            text-transform: uppercase;
+            top: 0;
+            width: 100%;
+            font-size: 0.8em;
+            &:hover ~ div.hover {
+                width: 100%;
+            }
+        }
+        div.hover {
+            background-color: $sunny;
+            height: 40px;
+            transition: width 0.3s ease;
+            width: 0;
+        }
+    }
 }
 
 /**********************

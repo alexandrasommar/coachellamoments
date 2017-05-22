@@ -2,8 +2,8 @@
 
   const mostRecent = document.querySelector('.most-recent .posts');
   const topList = document.querySelector('.top-list .posts');
-  const jsonTopList = '../json/toplist.json';
-  const jsonMostRecent = '../json/mostrecent.json';
+  const jsonTopList = './json/toplist.json';
+  const jsonMostRecent = './json/mostrecent.json';
 
   // Fetch request file
   function fetchRequest() {
@@ -29,25 +29,28 @@
   }
 
   function aLittleBitRandomness(number) {
-    return (number + (2.5 * (Math.random()+1)) + 's');
+    return (number + (4.5 * (Math.random()+1)) + 's');
   }
 
   // Set animation duration and z-index based on image height
   function speed(height, images) {
-      if (height < 190) {
-          images.style.animationDuration = aLittleBitRandomness(36);
+      if (height < 100) {
+          images.style.animationDuration = aLittleBitRandomness(56);
+          images.style.zIndex = '1';
+      } else if (height < 190) {
+          images.style.animationDuration = aLittleBitRandomness(46);
           images.style.animationDelay = '-3s';
           images.style.zIndex = '2';
       } else if (height > 190 && height < 230) {
-          images.style.animationDuration = aLittleBitRandomness(32);
+          images.style.animationDuration = aLittleBitRandomness(30);
           images.style.zIndex = '3';
+          images.style.animationDelay = '-9s';
       } else if (height > 230 && height < 270) {
-          images.style.animationDuration = aLittleBitRandomness(28);
+          images.style.animationDuration = aLittleBitRandomness(24);
           images.style.animationDelay = '-6s';
           images.style.zIndex = '4';
       } else {
-          images.style.animationDuration = aLittleBitRandomness(24);
-          images.style.animationDelay = '-9s';
+          images.style.animationDuration = aLittleBitRandomness(20);
           images.style.zIndex = '5';
       }
   }
@@ -58,14 +61,14 @@
   function displayResults(result, element) {
 
       var options = {
-          margin: {
+          marginTop: {
               min: 0,
-              max: 30,
+              max: 25,
               unit: '%'
           },
           height: {
-            min: 150,
-            max: 400,
+            min: 60,
+            max: 300,
             unit: 'px'
           }
       };
@@ -85,10 +88,10 @@
 
           imgArr = element.querySelectorAll('.single');
           currentImg = imgArr[i];
-          moreInfo.push([result[i].thumbnail_src, result[i].caption, result[i].comments.count, result[i].code]);
+          moreInfo.push([result[i].thumbnail_src, result[i].caption, result[i].comments.count, result[i].code, result[i].likes.count]);
           currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
-          currentImg.style.marginTop = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
-          currentImg.style.marginLeft = getRandomInt(options.margin.min, options.margin.max, options.margin.unit);
+          currentImg.style.margin = getRandomInt(options.marginTop.min, options.marginTop.max, options.marginTop.unit);
+          // currentImg.style.right = getRandomInt(options.marginLeft.min, options.marginLeft.max, options.marginLeft.unit);
           var imageHeight = window.getComputedStyle(currentImg, null).getPropertyValue('height');
           speed(imageHeight.slice(0, -2), currentImg);
       }
@@ -106,11 +109,18 @@
       popupImages[i].addEventListener('click', function() {
         var img = popupImages[i].querySelector('img');
         overlay.className = 'overlay visible';
-        popupDiv.appendChild(img);
         if(img.src === moreInfo[i][0]) {
-          popupDiv.innerHTML += `<p>Caption: ${moreInfo[i][1]}</p>
-                                <a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank">View on Instagram</a>
-                                <p>Comments: ${moreInfo[i][2]}</p>`;
+          popupDiv.innerHTML += `<a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank">
+                                  <img src="${moreInfo[i][0]}" alt="Post thumbnail">
+                                </a>
+                                <p>${moreInfo[i][1]}</p>
+                                <a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank">
+                                  <i class="fa fa-heart-o" aria-hidden="true"></i><p class="data">${moreInfo[i][4]}</p>
+                                </a>
+                                <a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank">
+                                  <i class="fa fa-comment-o" aria-hidden="true"></i><p class="data">${moreInfo[i][2]}</p>
+                                </a>
+                                <div class="link"><a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank">View on Instagram</a><div class="hover"></div></div>`;
         }
       });
     }
