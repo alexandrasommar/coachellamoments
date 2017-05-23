@@ -91,7 +91,6 @@
           moreInfo.push([result[i].thumbnail_src, result[i].caption, result[i].comments.count, result[i].code, result[i].likes.count]);
           currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
           currentImg.style.margin = getRandomInt(options.marginTop.min, options.marginTop.max, options.marginTop.unit);
-          // currentImg.style.right = getRandomInt(options.marginLeft.min, options.marginLeft.max, options.marginLeft.unit);
           var imageHeight = window.getComputedStyle(currentImg, null).getPropertyValue('height');
           speed(imageHeight.slice(0, -2), currentImg);
       }
@@ -110,10 +109,19 @@
         var img = popupImages[i].querySelector('img');
         overlay.className = 'overlay visible';
         if(img.src === moreInfo[i][0]) {
-          popupDiv.innerHTML += `<a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank">
+            var caption = '';
+            var captionJson = moreInfo[i][1];
+            if(captionJson !== undefined) {
+                if (captionJson.length > 248) {
+                    captionJson = captionJson.slice(0, 248);
+                    captionJson += `<a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank"> ...</a>`;
+                }
+                caption = `<p>${captionJson}</p>`;
+            }
+            popupDiv.innerHTML += `<a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank">
                                   <img src="${moreInfo[i][0]}" alt="Post thumbnail">
                                 </a>
-                                <p>${moreInfo[i][1]}</p>
+                                ${caption}
                                 <a href="https://instagram.com/p/${moreInfo[i][3]}" target="_blank">
                                   <i class="fa fa-heart-o" aria-hidden="true"></i><p class="data">${moreInfo[i][4]}</p>
                                 </a>
@@ -127,15 +135,22 @@
   }
 
   // If esc key is pressed, close pop up window
-  // TO DO: MAKE IT CLOSE ON CLICK AS WELL
+  var overlay = document.querySelector('.overlay');
   document.onkeydown = function(evt) {
     evt = evt || window.event;
     if (evt.keyCode == 27) {
-      var overlay = document.querySelector('.overlay');
       overlay.className = 'overlay';
       popupDiv.innerHTML = '';
     }
   };
+  // Close pop up window on click
+  overlay.addEventListener('click', function(evt) {
+      if (overlay.className === 'overlay visible') {
+          console.log('hej');
+          overlay.className = 'overlay';
+          popupDiv.innerHTML = '';
+      }
+  });
 
   // Make sure elements are loaded
   function waitForElement(className, callback){
@@ -149,9 +164,6 @@
 
   waitForElement('.single', showImageContent);
 
-  // var img = document.querySelectorAll('.posts .single');
-  // console.log(img);
-
   //fetchRequest();
   fetchResults(jsonTopList, topList);
   fetchResults(jsonMostRecent, mostRecent);
@@ -161,7 +173,7 @@
       fetchRequest();
       fetchResults(jsonTopList, topList);
       fetchResults(jsonMostRecent, mostRecent);
-  },(1000 * 60 * 10) );
+  },(1000 * 60 * 2) );
 
 
 })();

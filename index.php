@@ -32,7 +32,11 @@
             <a href="#info" class="info">
                 <img src="img/scroll.png" alt="scoll button">
             </a>
+                
         </div> <!-- .heading -->
+        <video autoplay loop>
+            <source src="img/video.mp4" type="video/mp4">
+        </video>
     </section> <!-- #home .home -->
 
     <!-- About the contest -->

@@ -165,6 +165,9 @@ section.home {
             }
         }
     }
+    video {
+        display: none;
+    }
 }
 
 /**********************
@@ -275,11 +278,12 @@ section.info {
         display: inline-block;
         position: absolute;
         transition: 0.3s;
+        object-fit: cover;
+        object-position: center;
         &:hover {
             animation-play-state: paused;
             cursor: pointer;
             height: 310px !important;
-            transform-origin: center;
             z-index: 20!important;
             .content {
                 visibility: visible;
