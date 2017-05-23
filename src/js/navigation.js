@@ -15,10 +15,10 @@ $('a[href*="#"]').click(function(event) {
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         
         // Update url
-        if (window.history.replaceState) {
+        //if (window.history.replaceState) {
            //Prevents browser from storing history with each change:
-           window.history.replaceState(targetName, targetName, '/' + targetName);
-        }
+           // window.history.replaceState(targetName, targetName, '/' + targetName);
+        // }
 
         //Hide main-nav in section: home
         hideNav(targetName);
@@ -43,8 +43,6 @@ $('a[href*="#"]').click(function(event) {
             $('html, body').animate({
                 scrollTop: target.offset().top
                 }, 1000, function() {
-                // Callback after animation
-                // Must change focus!
                 var $target = $(target);
                 $target.focus();
             });
@@ -54,11 +52,10 @@ $('a[href*="#"]').click(function(event) {
 
 //TODO: fixa blink på to-top knapp
 
-//Hide navigation
+// Hide navigation
 function hideNav(element) {
-
+    
     var mainNav = $('.main-nav.desktop');
-
     var toTop = $('a.to-top');
 
     if(element === 'home') {
@@ -72,9 +69,12 @@ function hideNav(element) {
         toTop.css('visibility', 'visible');
 
     } else {
+        setTimeout(function() {
+            console.log('time');
+            mainNav.css('visibility', 'visible');
+            toTop.css('visibility', 'visible');
+        },100);
         
-        mainNav.css('visibility', 'visible');
-        toTop.css('visibility', 'visible');
     }
 
 }
@@ -156,7 +156,7 @@ function currentUrl(element) {
     currentPage = element;
 
     if (window.history.replaceState) {
-       window.history.replaceState(element, element, '/' + element);
+      window.history.pushState(element, element, '#' + element);
     }
 
 }

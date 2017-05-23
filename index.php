@@ -29,8 +29,8 @@
     <section id="home" class="home">
         <div class="heading">
             <h1>#coachellamoment</h1>
-            <a href="#info" class="info">
-                <img src="img/scroll.png" alt="scoll button">
+            <a href="#info" class="down">
+                <img src="img/scroll.png" alt="scroll button">
             </a>
                 
         </div> <!-- .heading -->
