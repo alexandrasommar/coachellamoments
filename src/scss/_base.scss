@@ -223,27 +223,41 @@ section.info {
                     color: $sunny;
                 }
             }
+        }
+        div.link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 5px solid #fff;
+            position: relative;
+            transition: 0.3s;
+            &:hover {
+                border: 5px solid $sunny;
+            }
             a.insta-link {
-                border-bottom: 5px solid #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
                 color: $purple;
-                display: inline-block;
                 font-size: 0.85em;
                 font-weight: 600;
-                padding-bottom: 10px;
-                position: relative;
+                position: absolute;
                 text-decoration: none;
                 text-transform: uppercase;
-                transition: 0.3s;
-                &:hover {
-                    border-bottom: 5px solid $sunny;
-                }
+                width: 100%; 
+                height: 100%;
             }
-            .deadline {
-                font-size: 0.7em;
-                padding-top: 15px;
-                text-align: right;
-                text-transform: uppercase;
-            }
+        }
+        .deadline {
+            font-size: 0.7em;
+            padding-top: 15px;
+            text-align: right;
+            text-transform: uppercase;
         }
     }
 }
