@@ -34,24 +34,35 @@
 
     // Set animation duration and z-index based on image height
     function speed(height, images) {
+
         if (height < 100) {
+
             images.style.animationDuration = aLittleBitRandomness(56);
             images.style.zIndex = '1';
+
         } else if (height < 190) {
+
             images.style.animationDuration = aLittleBitRandomness(46);
             images.style.animationDelay = '-3s';
             images.style.zIndex = '2';
+
         } else if (height > 190 && height < 230) {
+
             images.style.animationDuration = aLittleBitRandomness(30);
             images.style.zIndex = '3';
             images.style.animationDelay = '-9s';
+
         } else if (height > 230 && height < 270) {
+
             images.style.animationDuration = aLittleBitRandomness(24);
             images.style.animationDelay = '-6s';
             images.style.zIndex = '4';
+
         } else {
+
             images.style.animationDuration = aLittleBitRandomness(20);
             images.style.zIndex = '5';
+
         }
     }
     // Save info about img in array for later use
@@ -76,6 +87,9 @@
         var currentImg;
         var imgArr;
 
+        // Clear results
+        element.innerHTML = '';
+
         for(let i = 0; i < 9; i++) {
 
             element.innerHTML += `<div class="single">
@@ -86,13 +100,19 @@
                                       </div>
                                   </div>`;
 
+            // Save post content in array
             imgArr = element.querySelectorAll('.single');
             currentImg = imgArr[i];
             moreInfo.push([result[i].thumbnail_src, result[i].caption, result[i].comments.count, result[i].code, result[i].likes.count]);
+
+            // Set random styles
             currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
             currentImg.style.margin = getRandomInt(options.marginTop.min, options.marginTop.max, options.marginTop.unit);
+
+            // Check current image height to set speed
             var imageHeight = window.getComputedStyle(currentImg, null).getPropertyValue('height');
             speed(imageHeight.slice(0, -2), currentImg);
+
       }
 
     }
@@ -103,78 +123,110 @@
 
     // Display more info in pop up window
     function showImageContent() {
-    var popupImages = document.querySelectorAll('.single');
-    for(let i = 0; i < popupImages.length; i++) {
-        popupImages[i].addEventListener('click', function() {
-        var img = popupImages[i].querySelector('img');
-        overlay.className = 'overlay visible';
-        if(img.src === moreInfo[i][0]) {
-            var caption = '';
-            var captionJson = moreInfo[i][1];
-            var instaLink = `https://instagram.com/p/${moreInfo[i][3]}`;
-            if(captionJson !== undefined) {
-                if (captionJson.length > 248) {
-                    captionJson = captionJson.slice(0, 248);
-                    captionJson += `<a href="${instaLink}" target="_blank"> ...</a>`;
+
+        var popupImages = document.querySelectorAll('.single');
+
+        for(let i = 0; i < popupImages.length; i++) {
+
+            popupImages[i].addEventListener('click', function() {
+
+                var img = popupImages[i].querySelector('img');
+                overlay.className = 'overlay visible';
+
+                if(img.src === moreInfo[i][0]) {
+
+                    var caption = '';
+                    var captionJson = moreInfo[i][1];
+                    var instaLink = `https://instagram.com/p/${moreInfo[i][3]}`;
+
+                    // Display caption if not empty
+                    if(captionJson !== undefined) {
+
+                        // Set limit to long captions
+                        if (captionJson.length > 248) {
+
+                            captionJson = captionJson.slice(0, 248);
+                            captionJson += `<a href="${instaLink}" target="_blank"> ...</a>`;
+
+                        }
+
+                        caption = `<p>${captionJson}</p>`;
+                    }
+
+                    popupDiv.innerHTML += `<a href="${instaLink}" target="_blank">
+                                          <img src="${moreInfo[i][0]}" alt="Post thumbnail">
+                                        </a>
+                                        ${caption}
+                                        <a href="${instaLink}" target="_blank">
+                                          <i class="fa fa-heart-o" aria-hidden="true"></i><p class="data">${moreInfo[i][4]}</p>
+                                        </a>
+                                        <a href="${instaLink}" target="_blank">
+                                          <i class="fa fa-comment-o" aria-hidden="true"></i><p class="data">${moreInfo[i][2]}</p>
+                                        </a>
+                                        <div class="link"><a href="${instaLink}" target="_blank">View on Instagram</a><div class="hover"></div></div>`;
+               
                 }
-                caption = `<p>${captionJson}</p>`;
-            }
-            popupDiv.innerHTML += `<a href="${instaLink}" target="_blank">
-                                  <img src="${moreInfo[i][0]}" alt="Post thumbnail">
-                                </a>
-                                ${caption}
-                                <a href="${instaLink}" target="_blank">
-                                  <i class="fa fa-heart-o" aria-hidden="true"></i><p class="data">${moreInfo[i][4]}</p>
-                                </a>
-                                <a href="${instaLink}" target="_blank">
-                                  <i class="fa fa-comment-o" aria-hidden="true"></i><p class="data">${moreInfo[i][2]}</p>
-                                </a>
-                                <div class="link"><a href="${instaLink}" target="_blank">View on Instagram</a><div class="hover"></div></div>`;
+          
+            });
+
         }
-      });
-    }
+
     }
 
     // If esc key is pressed, close pop up window
-    var overlay = document.querySelector('.overlay');
     document.onkeydown = function(evt) {
-    evt = evt || window.event;
-    if (evt.keyCode == 27) {
-        overlay.className = 'overlay';
-        popupDiv.innerHTML = '';
-    }
-    };
-    // Close pop up window on click
-    overlay.addEventListener('click', function(evt) {
-      if (overlay.className === 'overlay visible') {
-            console.log('hej');
+
+        evt = evt || window.event;
+
+        if (evt.keyCode == 27) {
+
             overlay.className = 'overlay';
             popupDiv.innerHTML = '';
-      }
+
+        }
+
+    };
+
+    // Close pop up window on click
+    overlay.addEventListener('click', function(evt) {
+
+        if (overlay.className === 'overlay visible') {
+
+            overlay.className = 'overlay';
+            popupDiv.innerHTML = '';
+
+        }
+
     });
 
     // Make sure elements are loaded
     function waitForElement(className, callback){
-    var poops = setInterval(function(){
-        if(document.querySelectorAll(className)){
-            clearInterval(poops);
-            callback();
-        }
-    }, 100);
+
+        var checkIfReady = setInterval(function(){
+
+            if(document.querySelectorAll(className)){
+
+                clearInterval(checkIfReady);
+                callback();
+
+            }
+
+        }, 100);
+
     }
 
     waitForElement('.single', showImageContent);
-
-    //fetchRequest();
+    
     fetchResults(jsonTopList, topList);
     fetchResults(jsonMostRecent, mostRecent);
 
-    // get latest info from instagram
-    setTimeout(function() {
-      fetchRequest();
-      fetchResults(jsonTopList, topList);
-      fetchResults(jsonMostRecent, mostRecent);
-    },(1000 * 60 * 2) );
+    // Get latest info from instagram
+    setInterval(function() {
 
+        fetchRequest();
+        fetchResults(jsonTopList, topList);
+        fetchResults(jsonMostRecent, mostRecent);
+
+    },(1000 * 60 * 2) );
 
 })();

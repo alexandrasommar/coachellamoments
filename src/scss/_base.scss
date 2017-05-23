@@ -234,17 +234,9 @@ section.info {
                 text-decoration: none;
                 text-transform: uppercase;
                 transition: 0.3s;
-                &:hover ~ div.hover {
-                    width: 142px;
+                &:hover {
+                    border-bottom: 5px solid $sunny;
                 }
-            }
-            div.hover {
-                border-bottom: 5px solid $sunny;
-                margin-top: -5px;
-                position: absolute;
-                transition: width 0.3s ease;
-                width: 0;
-                z-index: 10;
             }
             .deadline {
                 font-size: 0.7em;

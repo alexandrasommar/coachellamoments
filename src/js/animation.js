@@ -1,35 +1,38 @@
 (function($){
     
-    //Get user position
+    // Get user position
     function getUserPosition() {
         return $(window).scrollTop();
     }
 
-    //On scroll
     $(window).scroll(function(){
 
-        var scrollTop = getUserPosition();
-        var infoTop = $('#info').offset().top;
-        var coachellaTop = $('#coachella').offset().top;
-        var infoImg = $('img.info-img');
-        var textBlock = $('div.animated-text');
-        var imgBlock = $('div.img-block');
+        let scrollTop = getUserPosition();
 
-        //Section: Info animation
+        // Top position for each section
+        let infoTop = $('#info').offset().top;
+        let coachellaTop = $('#coachella').offset().top;
+
+        // Elemets to animate
+        let infoImg = $('img.info-img');
+        let textBlock = $('div.animated-text');
+        let imgBlock = $('div.img-block');
+
+        // Animation for info section
         if (scrollTop > (infoTop - 300)) {
             infoImg.css({'margin-top': '0', 'opacity': '1'});
         } else if (scrollTop < (infoTop - 400)) {
             infoImg.css({'margin-top': '300px', 'opacity': '0'});
         }
 
-        //Section: Coachella animation
+        // Animation for coachella section
         if (scrollTop > (coachellaTop - 150)) {
             textBlock.addClass('slide-in');
-        } else if(scrollTop < (coachellaTop - 500)) {
+        } else if (scrollTop < (coachellaTop - 500)) {
             textBlock.removeClass('slide-in');
         }
-    });
 
+    });
 
 })(jQuery);
 
