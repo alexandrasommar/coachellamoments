@@ -78,6 +78,11 @@
                 max: 50,
                 unit: '%'
             },
+            marginDesktop: {
+                min: 0,
+                max: 30,
+                unit: '%'
+            },
             height: {
                 min: 60,
                 max: 300,
@@ -109,7 +114,14 @@
 
             // Set random styles
             currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
-            currentImg.style.marginTop = getRandomInt(options.marginTop.min, options.marginTop.max, options.marginTop.unit);
+
+            if(window.innerWidth > 768) {
+                currentImg.style.marginTop = getRandomInt(options.marginDesktop.min, options.marginDesktop.max, options.marginDesktop.unit);
+            } else {
+                currentImg.style.marginTop = getRandomInt(options.marginTop.min, options.marginTop.max, options.marginTop.unit);
+            }
+
+
             currentImg.style.animationDelay = getRandomInt(options.animationDelay.min, options.animationDelay.max, options.animationDelay.unit);
 
             // Check current image height to set speed
