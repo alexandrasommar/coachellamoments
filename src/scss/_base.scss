@@ -160,13 +160,12 @@ section.home {
             padding: 40px 25px;
         }
         img {
-            bottom: 50px;
             height: 50px;
             opacity: 0.9;
             position: absolute;
             transition: 0.3s;
             &:hover {
-                bottom: 40px;
+                transform: translateY(15%);
             }
         }
     }
@@ -254,6 +253,7 @@ section.info {
                 text-transform: uppercase;
                 width: 100%;
                 height: 100%;
+                cursor: pointer;
             }
         }
         .deadline {
@@ -281,57 +281,31 @@ section.info {
         animation-iteration-count: infinite;
         animation-name: slideshow;
         animation-timing-function: linear;
-        border: solid 6px white;
-        box-shadow: 0 0 20px rgba(32, 14, 17, 0.15);
         box-sizing: border-box;
         display: inline-block;
         position: absolute;
-        object-fit: cover;
-        object-position: center;
-        transition: 0.3s;
-        &:hover {
-            animation-play-state: paused;
-            cursor: pointer;
-            height: 310px !important;
-            z-index: 20!important;
-            .content {
-                visibility: visible;
-            }
-            img {
-                filter: brightness(75%);
-            }
-        }
+        max-width: 100%;
+        transition: 0.1s ease-in;
         img {
-            border: 1px solid #ccc;
             height: 100%;
             position: relative;
             z-index: 1;
-            box-sizing: border-box;
-        }
-        .content {
-            color: #fff;
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            position: absolute;
-            top: 50%;
-            transition: all 0.1s ease;
-            visibility: hidden;
-            width: 100%;
-            z-index: 2;
-            i {
-                font-size: 1.8em;
-            }
-            p {
-                font-size: 1.2em;
-                margin: 0 0 0 10px;
-            }
+            border: solid 6px white;
+            box-shadow: 0 0 20px rgba(32, 14, 17, 0.15);
         }
     }
     @keyframes slideshow {
         0%   {transform: translateX(110vw)}
         100% {transform: translateX(-50vw)}
     }
+}
+
+.posts > .single:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+    width: 310px !important;
+    height: 310px !important;
+    z-index: 20 !important;
 }
 
 /**********************
