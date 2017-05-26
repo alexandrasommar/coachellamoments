@@ -53,7 +53,7 @@ p {
         top: -1000px;
         transition: all 1s;
         width: 100%;
-        z-index: 25;
+        z-index: 28;
         a {
             color: #efefef;
             font-size: 1.2em;
@@ -79,7 +79,7 @@ p {
         }
         &:checked ~ .menu {
             background: $sunny;
-            z-index: 26;
+            z-index: 30;
             span {
               transform: scale3d(0,1,1);
             }
