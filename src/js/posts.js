@@ -37,25 +37,25 @@
 
         if (height < 100) {
 
-            images.style.animationDuration = aLittleBitRandomness(56);
+            images.style.animationDuration = aLittleBitRandomness(100);
             images.style.zIndex = '1';
 
         } else if (height < 190) {
 
-            images.style.animationDuration = aLittleBitRandomness(46);
-            images.style.animationDelay = '-3s';
+            images.style.animationDuration = aLittleBitRandomness(80);
+            // images.style.animationDelay = '-5s';
             images.style.zIndex = '2';
 
         } else if (height > 190 && height < 230) {
 
-            images.style.animationDuration = aLittleBitRandomness(30);
+            images.style.animationDuration = aLittleBitRandomness(60);
             images.style.zIndex = '3';
-            images.style.animationDelay = '-9s';
+            // images.style.animationDelay = '-15s';
 
         } else if (height > 230 && height < 270) {
 
-            images.style.animationDuration = aLittleBitRandomness(24);
-            images.style.animationDelay = '-6s';
+            images.style.animationDuration = aLittleBitRandomness(40);
+            // images.style.animationDelay = '-30s';
             images.style.zIndex = '4';
 
         } else {
@@ -65,6 +65,7 @@
 
         }
     }
+
     // Save info about img in array for later use
     var moreInfo = [];
 
@@ -73,14 +74,19 @@
 
       var options = {
             marginTop: {
-                min: 0,
-                max: 25,
+                min: 10,
+                max: 50,
                 unit: '%'
             },
             height: {
                 min: 60,
                 max: 300,
                 unit: 'px'
+            },
+            animationDelay: {
+                min: -20,
+                max: 0,
+                unit: 's'
             }
       };
 
@@ -94,10 +100,6 @@
 
             element.innerHTML += `<div class="single">
                                       <img src="${result[i].thumbnail_src}">
-                                      <div class="content">
-                                          <i class="fa fa-heart" aria-hidden="true"></i>
-                                          <p>${result[i].likes.count}</p>
-                                      </div>
                                   </div>`;
 
             // Save post content in array
@@ -107,7 +109,8 @@
 
             // Set random styles
             currentImg.style.height = getRandomInt(options.height.min, options.height.max, options.height.unit);
-            currentImg.style.margin = getRandomInt(options.marginTop.min, options.marginTop.max, options.marginTop.unit);
+            currentImg.style.marginTop = getRandomInt(options.marginTop.min, options.marginTop.max, options.marginTop.unit);
+            currentImg.style.animationDelay = getRandomInt(options.animationDelay.min, options.animationDelay.max, options.animationDelay.unit);
 
             // Check current image height to set speed
             var imageHeight = window.getComputedStyle(currentImg, null).getPropertyValue('height');
@@ -164,9 +167,9 @@
                                           <i class="fa fa-comment-o" aria-hidden="true"></i><p class="data">${moreInfo[i][2]}</p>
                                         </a>
                                         <div class="link"><a href="${instaLink}" target="_blank">View on Instagram</a><div class="hover"></div></div>`;
-               
+
                 }
-          
+
             });
 
         }
@@ -216,7 +219,7 @@
     }
 
     waitForElement('.single', showImageContent);
-    
+
     fetchResults(jsonTopList, topList);
     fetchResults(jsonMostRecent, mostRecent);
 
@@ -228,5 +231,4 @@
         fetchResults(jsonMostRecent, mostRecent);
 
     },(1000 * 60 * 2) );
-
 })();
