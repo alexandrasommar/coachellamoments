@@ -145,6 +145,7 @@ section.home {
     background-size: cover;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
     .heading {
         align-items: center;
         display: flex;
