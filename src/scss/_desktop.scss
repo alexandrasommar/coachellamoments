@@ -120,12 +120,28 @@ section.info {
 }
 
 /**********************
+        Posts
+**********************/
+
+.posts {
+    height: 40vh;
+}
+
+.posts > .single:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+    width: 310px !important;
+    height: 310px !important;
+    z-index: 20 !important;
+}
+
+/**********************
      Pop up window
 **********************/
 
 .pop-up {
   border-radius: 5px;
-  margin: 40px auto;
+  margin: 30px auto;
   padding: 20px;
   width: 30%;
   img {

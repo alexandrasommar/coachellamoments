@@ -270,12 +270,9 @@ section.info {
 **********************/
 
 .posts {
-    display: flex;
     height: 70vh;
     position: relative;
     width: 100%;
-    justify-content: space-between;
-    margin-top: 10px;
     .single {
         animation-duration: 150s;
         animation-iteration-count: infinite;
@@ -300,14 +297,6 @@ section.info {
     }
 }
 
-.posts > .single:hover {
-    animation-play-state: paused;
-    cursor: pointer;
-    width: 310px !important;
-    height: 310px !important;
-    z-index: 20 !important;
-}
-
 /**********************
      Pop up window
 **********************/
@@ -323,6 +312,14 @@ section.info {
   transition: opacity 500ms;
   visibility: hidden;
 }
+.overlay::before {
+    font-family: 'FontAwesome';
+    content: "\f057";
+    color: #fff;
+    float: right;
+    padding: 12px 12px 0 0;
+    font-size: 1.2em;
+}
 .visible {
   opacity: 1;
   visibility: visible;
@@ -331,7 +328,7 @@ section.info {
 .pop-up {
     background: #fff;
     border-radius: 5px;
-    margin: 10px auto;
+    margin: 45px auto;
     padding: 20px;
     position: relative;
     transition: all 5s ease-in-out;

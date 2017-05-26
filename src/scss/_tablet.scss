@@ -53,7 +53,20 @@ section.info {
 
 section.top-list,
 section.most-recent {
-    padding: 10px 50px;
+    padding: 5px 50px 0 50px;
+}
+
+/**********************
+     Pop up window
+**********************/
+
+.overlay::before {
+    font-family: 'FontAwesome';
+    content: "\f057";
+    color: #fff;
+    float: right;
+    padding: 2% 2% 0 0;
+    font-size: 1.2em;
 }
 
 /**********************

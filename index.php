@@ -57,13 +57,10 @@
     <section id="top-list" class="top-list">
         <h2>Top List</h2>
         <div class="overlay">
-
           <div class="pop-up">
-
-          </div>
-        </div>
+          </div> <!-- .pop-up -->
+        </div> <!-- .overlay -->
         <div class="posts">
-            <!-- Posts-->
         </div> <!-- .posts -->
     </section> <!-- #top-list .top-list -->
 
