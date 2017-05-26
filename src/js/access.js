@@ -1,3 +1,6 @@
+// Används inte eftersom vi inte använder Instagrams officiella API, samma som för auth.php
+
+
 (function($) {
     'use strict'
     
@@ -13,20 +16,20 @@
         var accessToken = getAccessToken();
         
         $.ajax( {
-            url: url
-            ,data: {
+            url: url,
+            data: {
                 access_token:accessToken
-            }
-            ,dataType: 'jsonp'
-            ,success: function(resp) {
-                //console.log(response);
+            },
+            dataType: 'jsonp',
+            success: function(resp) {
                 
                 for(var i in resp.data) {
+                    
                     var img = $('<img>');
                     img.attr('src', resp.data[i].images.low_resolution.url );
                     $('#pictures').append(img);
-                }
-                
+                    
+                }    
             }
         });
     };
@@ -34,9 +37,11 @@
     $(function(){
         // är användaren authentiserad mot instagram?
          if (getAccessToken()) {
+             
             // Det finns en token
             getImages();
             $('#login').hide();
+            
          } else {
              // Användaren har inte authentiserat
             $('#login').show();

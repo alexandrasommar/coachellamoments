@@ -43,19 +43,16 @@
         } else if (height < 190) {
 
             images.style.animationDuration = aLittleBitRandomness(80);
-            // images.style.animationDelay = '-5s';
             images.style.zIndex = '2';
 
         } else if (height > 190 && height < 230) {
 
             images.style.animationDuration = aLittleBitRandomness(60);
             images.style.zIndex = '3';
-            // images.style.animationDelay = '-15s';
 
         } else if (height > 230 && height < 270) {
 
             images.style.animationDuration = aLittleBitRandomness(40);
-            // images.style.animationDelay = '-30s';
             images.style.zIndex = '4';
 
         } else {
@@ -164,21 +161,20 @@
                             captionJson += `<a href="${instaLink}" target="_blank"> ...</a>`;
 
                         }
-
                         caption = `<p>${captionJson}</p>`;
                     }
 
                     popupDiv.innerHTML += `<a href="${instaLink}" target="_blank">
-                                          <img src="${moreInfo[i][0]}" alt="Post thumbnail">
-                                        </a>
-                                        ${caption}
-                                        <a href="${instaLink}" target="_blank">
-                                          <i class="fa fa-heart-o" aria-hidden="true"></i><p class="data">${moreInfo[i][4]}</p>
-                                        </a>
-                                        <a href="${instaLink}" target="_blank">
-                                          <i class="fa fa-comment-o" aria-hidden="true"></i><p class="data">${moreInfo[i][2]}</p>
-                                        </a>
-                                        <div class="link"><a href="${instaLink}" target="_blank">View on Instagram</a><div class="hover"></div></div>`;
+                                                <img src="${moreInfo[i][0]}" alt="Post thumbnail">
+                                            </a>
+                                            ${caption}
+                                            <a href="${instaLink}" target="_blank">
+                                                <i class="fa fa-heart-o" aria-hidden="true"></i><p class="data">${moreInfo[i][4]}</p>
+                                            </a>
+                                            <a href="${instaLink}" target="_blank">
+                                                <i class="fa fa-comment-o" aria-hidden="true"></i><p class="data">${moreInfo[i][2]}</p>
+                                            </a>
+                                            <div class="link"><a href="${instaLink}" target="_blank">View on Instagram</a><div class="hover"></div></div>`;
 
                 }
 
