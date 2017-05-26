@@ -9,8 +9,8 @@
 **********************/
 
 html, body {
-  overflow-x:hidden 
-} 
+  overflow-x:hidden
+}
 
 body {
     box-sizing: border-box;
@@ -19,7 +19,7 @@ body {
 }
 section {
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 768px;
     min-width: 100vw;
     height: 100vh;
     width: 100vw;
@@ -296,7 +296,7 @@ section.info {
     }
     @keyframes slideshow {
         0%   {transform: translateX(110vw)}
-        100% {transform: translateX(-50vw)}
+        100% {transform: translateX(-150vw)}
     }
 }
 
