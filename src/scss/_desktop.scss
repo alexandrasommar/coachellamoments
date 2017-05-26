@@ -120,6 +120,33 @@ section.info {
 }
 
 /**********************
+     Pop up window
+**********************/
+
+.pop-up {
+  border-radius: 5px;
+  margin: 40px auto;
+  padding: 20px;
+  width: 30%;
+  img {
+    width: 100%;
+  }
+  p {
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .data {
+    font-size: 0.9em;
+    margin-right: 10px;
+  }
+  i {
+    margin: 0 5px 3px 1px;
+    font-size: 0.9em;
+  }
+}
+
+/**********************
    Section: Coachella
 **********************/
 
