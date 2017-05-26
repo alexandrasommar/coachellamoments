@@ -8,11 +8,14 @@
          Base
 **********************/
 
+html, body {
+  overflow-x:hidden 
+} 
+
 body {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    overflow-x: hidden;
 }
 section {
     box-sizing: border-box;
@@ -47,7 +50,7 @@ p {
         left: 0;
         overflow: hidden;
         position: fixed;
-        top: -800px;
+        top: -1000px;
         transition: all 1s;
         width: 100%;
         z-index: 25;
@@ -303,6 +306,7 @@ section.info {
             height: 100%;
             position: relative;
             z-index: 1;
+            box-sizing: border-box;
         }
         .content {
             color: #fff;
