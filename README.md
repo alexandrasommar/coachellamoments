@@ -8,6 +8,6 @@ We built our own image slider using vanilla js and inspired by the real Coachell
 
 # Find project online
 
-http://alicelangerth.se/coachella/
+http://alexandrasommar.se/coachella
 
 
